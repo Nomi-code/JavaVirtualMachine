@@ -1,0 +1,11 @@
+/workspace/JavaVirtualMachine/build/CMakeFiles/test.dir
+/workspace/JavaVirtualMachine/build/CMakeFiles/edit_cache.dir
+/workspace/JavaVirtualMachine/build/CMakeFiles/rebuild_cache.dir
+/workspace/JavaVirtualMachine/build/test/CMakeFiles/JavaVirtualMachineTest.dir
+/workspace/JavaVirtualMachine/build/test/CMakeFiles/test.dir
+/workspace/JavaVirtualMachine/build/test/CMakeFiles/edit_cache.dir
+/workspace/JavaVirtualMachine/build/test/CMakeFiles/rebuild_cache.dir
+/workspace/JavaVirtualMachine/build/src/CMakeFiles/JavaVirtualMachine.dir
+/workspace/JavaVirtualMachine/build/src/CMakeFiles/test.dir
+/workspace/JavaVirtualMachine/build/src/CMakeFiles/edit_cache.dir
+/workspace/JavaVirtualMachine/build/src/CMakeFiles/rebuild_cache.dir

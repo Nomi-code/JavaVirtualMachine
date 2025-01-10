@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -lstdc++fs CMakeFiles/JavaVirtualMachine.dir/main.cpp.o -o /workspace/JavaVirtualMachine/bin/JavaVirtualMachine  -lstdc++fs /usr/local/lib/libfmt.a /usr/local/lib/libspdlog.a
