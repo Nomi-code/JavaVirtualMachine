@@ -1,0 +1,38 @@
+{
+    "clang-format.executable": "/usr/bin/clang-format",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "[cpp]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnType": true,
+        "editor.formatOnPaste": true,
+        "editor.defaultFormatter": "xaver.clang-format",
+    },
+    "C_Cpp.intelliSenseEngineFallback": "Disabled",
+    "clangd.path": "/usr/bin/clangd",
+    "clangd.fallbackFlags": [
+        "-I${workspaceFolder}/include"  
+    ],
+    "clangd.detectExtensionConflicts": true,
+    "clangd.arguments": [
+        "--log=verbose",
+        "--pretty",
+        "--all-scopes-completion",
+        "--completion-style=bundled",
+        "--cross-file-rename",
+        "--header-insertion=iwyu",
+        "--header-insertion-decorators",
+        "--background-index",
+        "--clang-tidy",
+        "--clang-tidy-checks=cppcoreguidelines-*,performance-*,bugprone-*,portability-*,modernize-*,google-*",
+        "-j=2",
+        "--pch-storage=disk",
+        "--function-arg-placeholders=false",
+        "--compile-commands-dir=${workspaceFolder}/build",
+        "--query-driver=/usr/bin/clang++"
+    ],
+    "C_Cpp.default.compilerArgs": [
+        "-std=c++20"
+    ],
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++"
+}

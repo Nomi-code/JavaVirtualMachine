@@ -3,18 +3,21 @@
 #include <fstream>
 #include <filesystem>
 #include <type_traits>
+#include <bit>
 
 #include "../java_base.hpp"
 
 class ByteCodeReader {
   private:
     std::fstream& file_binary_resource;
-    
+
   public:
     ByteCodeReader() = delete;
     ByteCodeReader(const ByteCodeReader&) = delete;
+    ByteCodeReader& operator=(const ByteCodeReader&) = delete;
     ~ByteCodeReader() = default;
-    explicit ByteCodeReader(std::fstream& fms) : file_binary_resource(fms) {}
+    explicit ByteCodeReader(std::fstream& fms) : file_binary_resource(fms) {
+    }
 
     void read_u1(jvm_raw_type::u1* const);
     void read_u2(jvm_raw_type::u2* const);
@@ -29,7 +32,7 @@ inline void ByteCodeReader::read_u1(jvm_raw_type::u1* const u1_addr) {
 inline void ByteCodeReader::read_u2(jvm_raw_type::u2* const u2_addr) {
     this->file_binary_resource.read(reinterpret_cast<char*>(u2_addr), sizeof(jvm_raw_type::u2));
     if constexpr (std::endian::native == std::endian::little) {
-        *u2_addr = __builtin_bswap16(*u2_addr);
+        *u2_addr = __builtin_bswap16(*u2_addr); 
     }
 }
 

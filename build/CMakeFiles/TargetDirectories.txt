@@ -5,6 +5,9 @@
 /workspace/JavaVirtualMachine/build/test/CMakeFiles/test.dir
 /workspace/JavaVirtualMachine/build/test/CMakeFiles/edit_cache.dir
 /workspace/JavaVirtualMachine/build/test/CMakeFiles/rebuild_cache.dir
+/workspace/JavaVirtualMachine/build/src/CMakeFiles/intrinsics_gen.dir
+/workspace/JavaVirtualMachine/build/src/CMakeFiles/omp_gen.dir
+/workspace/JavaVirtualMachine/build/src/CMakeFiles/acc_gen.dir
 /workspace/JavaVirtualMachine/build/src/CMakeFiles/JavaVirtualMachine.dir
 /workspace/JavaVirtualMachine/build/src/CMakeFiles/test.dir
 /workspace/JavaVirtualMachine/build/src/CMakeFiles/edit_cache.dir

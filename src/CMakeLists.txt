@@ -1,6 +1,7 @@
 find_package(Boost REQUIRED)
 find_package(fmt REQUIRED)
 find_package(spdlog REQUIRED)
+find_package(LLVM REQUIRED)
 
 aux_source_directory(${DIR_SRC_PATH} SRC)
 include_directories(${DIR_INCLUDE_PATH})
@@ -27,4 +28,15 @@ if (spdlog_FOUND)
     target_link_libraries(JavaVirtualMachine PRIVATE spdlog::spdlog)
 else()
     message(FATAL_ERROR "spdlog not found!")
+endif()
+
+if (LLVM_FOUND)
+    include_directories(${LLVM_INCLUDE_DIRS})
+    link_directories(${LLVM_LIBRARY_DIRS})
+    add_definitions(${LLVM_DEFINITIONS})
+
+    llvm_map_components_to_libnames(LLVM_LIBS core orcjit native)
+    target_link_libraries(JavaVirtualMachine PRIVATE ${LLVM_LIBS})
+else()
+    message(FATAL_ERROR "llvm not found!")
 endif()

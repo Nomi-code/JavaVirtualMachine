@@ -1,37 +1,12 @@
 [
-  {
-    "arguments": [
-      "/usr/bin/clang++",
-      "-DDEBUG",
-      "-I/workspace/JavaVirtualMachine/test/include",
-      "-g",
-      "-std=gnu++20",
-      "-std=c++20",
-      "-DGTEST_HAS_PTHREAD=1",
-      "-c",
-      "-o",
-      "CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o",
-      "/workspace/JavaVirtualMachine/test/src/classFileTests.cpp"
-    ],
-    "directory": "/workspace/JavaVirtualMachine/build/test",
-    "file": "/workspace/JavaVirtualMachine/test/src/classFileTests.cpp",
-    "output": "/workspace/JavaVirtualMachine/build/test/CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang++",
-      "-DSPDLOG_COMPILED_LIB",
-      "-I/workspace/JavaVirtualMachine/include",
-      "-g",
-      "-std=gnu++20",
-      "-std=c++20",
-      "-c",
-      "-o",
-      "CMakeFiles/JavaVirtualMachine.dir/main.cpp.o",
-      "/workspace/JavaVirtualMachine/src/main.cpp"
-    ],
-    "directory": "/workspace/JavaVirtualMachine/build/src",
-    "file": "/workspace/JavaVirtualMachine/src/main.cpp",
-    "output": "/workspace/JavaVirtualMachine/build/src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o"
-  }
+{
+  "directory": "/workspace/JavaVirtualMachine/build/test",
+  "command": "/usr/bin/clang++ -DDEBUG -I/workspace/JavaVirtualMachine/test/include -g -std=c++20 -DGTEST_HAS_PTHREAD=1 -std=gnu++20 -o CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o -c /workspace/JavaVirtualMachine/test/src/classFileTests.cpp",
+  "file": "/workspace/JavaVirtualMachine/test/src/classFileTests.cpp"
+},
+{
+  "directory": "/workspace/JavaVirtualMachine/build/src",
+  "command": "/usr/bin/clang++ -DFMT_LOCALE -DFMT_SHARED -DSPDLOG_COMPILED_LIB -I/workspace/JavaVirtualMachine/include -I/usr/lib/llvm-14/include -g   -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -std=c++20 -std=gnu++20 -o CMakeFiles/JavaVirtualMachine.dir/main.cpp.o -c /workspace/JavaVirtualMachine/src/main.cpp",
+  "file": "/workspace/JavaVirtualMachine/src/main.cpp"
+}
 ]

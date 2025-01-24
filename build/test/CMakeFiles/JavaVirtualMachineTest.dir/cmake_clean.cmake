@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/workspace/JavaVirtualMachine/test/bin/JavaVirtualMachineTest"
-  "/workspace/JavaVirtualMachine/test/bin/JavaVirtualMachineTest.pdb"
+  "../../test/bin/JavaVirtualMachineTest"
+  "../../test/bin/JavaVirtualMachineTest.pdb"
   "CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o"
   "CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o.d"
 )

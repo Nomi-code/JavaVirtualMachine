@@ -31,12 +31,14 @@ TEST(CLASS_FILE_TEST, CLASS_FILE_INPUT_TEST) {
     }
     for (const auto& entry : fs::directory_iterator(dir)) {
         auto p = entry.path();
-        fstream ifs(p, std::ios::binary | std::ios::in);
-        spdlog::warn({"start read class file: {}"}, p.c_str());
-        ClassFile classfile;
-        ifs >> classfile;
-        classfile.print();
-        ifs.close();
+        if (string(p).ends_with(".class")) {
+            fstream ifs(p, std::ios::binary | std::ios::in);
+            spdlog::warn({"start read class file: {}"}, p.c_str());
+            raw_jvm_data::ClassFile classfile;
+            ifs >> classfile;
+            classfile.print();
+            ifs.close();
+        }
     }
 
     EXPECT_TRUE(pass);
