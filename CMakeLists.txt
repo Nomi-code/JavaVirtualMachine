@@ -29,4 +29,6 @@ add_link_options(-lstdc++fs)
 add_subdirectory(${DIR_TEST_PATH})
 add_subdirectory(${DIR_SRC_PATH})
 
+include_directories(${DIR_INCLUDE_PATH})
+
 enable_testing()

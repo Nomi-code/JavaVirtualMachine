@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = -DDEBUG
 
-CXX_INCLUDES = -I/workspace/JavaVirtualMachine/test/include
+CXX_INCLUDES = -I/workspace/JavaVirtualMachine/include
 
 CXX_FLAGS = -g -std=c++20 -DGTEST_HAS_PTHREAD=1 -std=gnu++20
 

@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/workspace/JavaVirtualMachine/src/classFile/class_file.cpp" "test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o" "gcc" "test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o.d"
+  "/workspace/JavaVirtualMachine/src/runtime/klass.cpp" "test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o" "gcc" "test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o.d"
   "/workspace/JavaVirtualMachine/test/src/classFileTests.cpp" "test/CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o" "gcc" "test/CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o.d"
   )
 

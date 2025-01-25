@@ -140,6 +140,54 @@ JavaVirtualMachineTest/fast:
 	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/build
 .PHONY : JavaVirtualMachineTest/fast
 
+__/src/classFile/class_file.o: __/src/classFile/class_file.cpp.o
+.PHONY : __/src/classFile/class_file.o
+
+# target to build an object file
+__/src/classFile/class_file.cpp.o:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o
+.PHONY : __/src/classFile/class_file.cpp.o
+
+__/src/classFile/class_file.i: __/src/classFile/class_file.cpp.i
+.PHONY : __/src/classFile/class_file.i
+
+# target to preprocess a source file
+__/src/classFile/class_file.cpp.i:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.i
+.PHONY : __/src/classFile/class_file.cpp.i
+
+__/src/classFile/class_file.s: __/src/classFile/class_file.cpp.s
+.PHONY : __/src/classFile/class_file.s
+
+# target to generate assembly for a file
+__/src/classFile/class_file.cpp.s:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.s
+.PHONY : __/src/classFile/class_file.cpp.s
+
+__/src/runtime/klass.o: __/src/runtime/klass.cpp.o
+.PHONY : __/src/runtime/klass.o
+
+# target to build an object file
+__/src/runtime/klass.cpp.o:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o
+.PHONY : __/src/runtime/klass.cpp.o
+
+__/src/runtime/klass.i: __/src/runtime/klass.cpp.i
+.PHONY : __/src/runtime/klass.i
+
+# target to preprocess a source file
+__/src/runtime/klass.cpp.i:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.i
+.PHONY : __/src/runtime/klass.cpp.i
+
+__/src/runtime/klass.s: __/src/runtime/klass.cpp.s
+.PHONY : __/src/runtime/klass.s
+
+# target to generate assembly for a file
+__/src/runtime/klass.cpp.s:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.s
+.PHONY : __/src/runtime/klass.cpp.s
+
 src/classFileTests.o: src/classFileTests.cpp.o
 .PHONY : src/classFileTests.o
 
@@ -174,6 +222,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... JavaVirtualMachineTest"
+	@echo "... __/src/classFile/class_file.o"
+	@echo "... __/src/classFile/class_file.i"
+	@echo "... __/src/classFile/class_file.s"
+	@echo "... __/src/runtime/klass.o"
+	@echo "... __/src/runtime/klass.i"
+	@echo "... __/src/runtime/klass.s"
 	@echo "... src/classFileTests.o"
 	@echo "... src/classFileTests.i"
 	@echo "... src/classFileTests.s"

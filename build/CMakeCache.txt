@@ -292,9 +292,6 @@ boost_headers_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0
 //The directory containing a CMake configuration file for fmt.
 fmt_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/fmt
 
-//The directory containing a CMake configuration file for llvm.
-llvm_DIR:PATH=llvm_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for spdlog.
 spdlog_DIR:PATH=/usr/local/lib/cmake/spdlog
 

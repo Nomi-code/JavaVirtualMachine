@@ -425,4 +425,6 @@ test/CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/fs_ops.h \
   /workspace/JavaVirtualMachine/test/src/../../include/classFile/class_file.hpp \
   /workspace/JavaVirtualMachine/test/src/../../include/classFile/../java_base.hpp \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/unordered_set \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_set.h \
   /workspace/JavaVirtualMachine/test/src/../../include/classFile/byte_code_reader.hpp

@@ -1,1 +1,1 @@
-/usr/bin/clang++ -g -lstdc++fs CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o -o ../../test/bin/JavaVirtualMachineTest  /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a 
+/usr/bin/clang++ -g -lstdc++fs CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o -o ../../test/bin/JavaVirtualMachineTest  /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a 

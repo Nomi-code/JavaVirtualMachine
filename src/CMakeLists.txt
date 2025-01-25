@@ -3,11 +3,15 @@ find_package(fmt REQUIRED)
 find_package(spdlog REQUIRED)
 find_package(LLVM REQUIRED)
 
-aux_source_directory(${DIR_SRC_PATH} SRC)
-include_directories(${DIR_INCLUDE_PATH})
+file(GLOB CLASS_FILE_SOURCES "classFile/*.cpp")
+file(GLOB RUN_TIME_SOURCES "runtime/*.cpp")
+file(GLOB MAIN_SOURCES "main.cpp")
+set(SOURCES ${CLASS_FILE_SOURCES} ${RUN_TIME_SOURCES} ${MAIN_SOURCES})
+
 add_executable(JavaVirtualMachine)
-target_sources(JavaVirtualMachine PUBLIC ${SRC})
+target_sources(JavaVirtualMachine PUBLIC ${SOURCES})
 target_link_libraries(JavaVirtualMachine PRIVATE stdc++fs)
+target_include_directories(JavaVirtualMachine PRIVATE ${DIR_INCLUDE_PATH})
 
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})

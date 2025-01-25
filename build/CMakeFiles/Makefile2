@@ -117,12 +117,12 @@ test/clean: test/CMakeFiles/JavaVirtualMachineTest.dir/clean
 test/CMakeFiles/JavaVirtualMachineTest.dir/all:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=3,4 "Built target JavaVirtualMachineTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=5,6,7,8 "Built target JavaVirtualMachineTest"
 .PHONY : test/CMakeFiles/JavaVirtualMachineTest.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/JavaVirtualMachineTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/JavaVirtualMachine/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/JavaVirtualMachine/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/JavaVirtualMachineTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/JavaVirtualMachine/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/JavaVirtualMachineTest.dir/rule
@@ -221,12 +221,12 @@ src/CMakeFiles/acc_gen.dir/clean:
 src/CMakeFiles/JavaVirtualMachine.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=1,2 "Built target JavaVirtualMachine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=1,2,3,4 "Built target JavaVirtualMachine"
 .PHONY : src/CMakeFiles/JavaVirtualMachine.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/JavaVirtualMachine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/JavaVirtualMachine/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/JavaVirtualMachine/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/JavaVirtualMachine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspace/JavaVirtualMachine/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/JavaVirtualMachine.dir/rule

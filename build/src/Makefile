@@ -182,6 +182,30 @@ JavaVirtualMachine/fast:
 	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/build
 .PHONY : JavaVirtualMachine/fast
 
+classFile/class_file.o: classFile/class_file.cpp.o
+.PHONY : classFile/class_file.o
+
+# target to build an object file
+classFile/class_file.cpp.o:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.o
+.PHONY : classFile/class_file.cpp.o
+
+classFile/class_file.i: classFile/class_file.cpp.i
+.PHONY : classFile/class_file.i
+
+# target to preprocess a source file
+classFile/class_file.cpp.i:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.i
+.PHONY : classFile/class_file.cpp.i
+
+classFile/class_file.s: classFile/class_file.cpp.s
+.PHONY : classFile/class_file.s
+
+# target to generate assembly for a file
+classFile/class_file.cpp.s:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.s
+.PHONY : classFile/class_file.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -206,6 +230,30 @@ main.cpp.s:
 	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+runtime/klass.o: runtime/klass.cpp.o
+.PHONY : runtime/klass.o
+
+# target to build an object file
+runtime/klass.cpp.o:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o
+.PHONY : runtime/klass.cpp.o
+
+runtime/klass.i: runtime/klass.cpp.i
+.PHONY : runtime/klass.i
+
+# target to preprocess a source file
+runtime/klass.cpp.i:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.i
+.PHONY : runtime/klass.cpp.i
+
+runtime/klass.s: runtime/klass.cpp.s
+.PHONY : runtime/klass.s
+
+# target to generate assembly for a file
+runtime/klass.cpp.s:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.s
+.PHONY : runtime/klass.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,9 +267,15 @@ help:
 	@echo "... intrinsics_gen"
 	@echo "... omp_gen"
 	@echo "... JavaVirtualMachine"
+	@echo "... classFile/class_file.o"
+	@echo "... classFile/class_file.i"
+	@echo "... classFile/class_file.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... runtime/klass.o"
+	@echo "... runtime/klass.i"
+	@echo "... runtime/klass.s"
 .PHONY : help
 
 

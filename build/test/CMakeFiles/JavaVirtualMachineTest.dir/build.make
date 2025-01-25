@@ -83,19 +83,51 @@ test/CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.s"
 	cd /workspace/JavaVirtualMachine/build/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/JavaVirtualMachine/test/src/classFileTests.cpp -o CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.s
 
+test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o: test/CMakeFiles/JavaVirtualMachineTest.dir/flags.make
+test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o: ../src/classFile/class_file.cpp
+test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o: test/CMakeFiles/JavaVirtualMachineTest.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o"
+	cd /workspace/JavaVirtualMachine/build/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o -MF CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o.d -o CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o -c /workspace/JavaVirtualMachine/src/classFile/class_file.cpp
+
+test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.i"
+	cd /workspace/JavaVirtualMachine/build/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/JavaVirtualMachine/src/classFile/class_file.cpp > CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.i
+
+test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.s"
+	cd /workspace/JavaVirtualMachine/build/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/JavaVirtualMachine/src/classFile/class_file.cpp -o CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.s
+
+test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o: test/CMakeFiles/JavaVirtualMachineTest.dir/flags.make
+test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o: ../src/runtime/klass.cpp
+test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o: test/CMakeFiles/JavaVirtualMachineTest.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o"
+	cd /workspace/JavaVirtualMachine/build/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o -MF CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o.d -o CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o -c /workspace/JavaVirtualMachine/src/runtime/klass.cpp
+
+test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.i"
+	cd /workspace/JavaVirtualMachine/build/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/JavaVirtualMachine/src/runtime/klass.cpp > CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.i
+
+test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.s"
+	cd /workspace/JavaVirtualMachine/build/test && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/JavaVirtualMachine/src/runtime/klass.cpp -o CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.s
+
 # Object files for target JavaVirtualMachineTest
 JavaVirtualMachineTest_OBJECTS = \
-"CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o"
+"CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o" \
+"CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o" \
+"CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o"
 
 # External object files for target JavaVirtualMachineTest
 JavaVirtualMachineTest_EXTERNAL_OBJECTS =
 
 ../test/bin/JavaVirtualMachineTest: test/CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o
+../test/bin/JavaVirtualMachineTest: test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o
+../test/bin/JavaVirtualMachineTest: test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o
 ../test/bin/JavaVirtualMachineTest: test/CMakeFiles/JavaVirtualMachineTest.dir/build.make
 ../test/bin/JavaVirtualMachineTest: /usr/lib/x86_64-linux-gnu/libgtest_main.a
 ../test/bin/JavaVirtualMachineTest: /usr/lib/x86_64-linux-gnu/libgtest.a
 ../test/bin/JavaVirtualMachineTest: test/CMakeFiles/JavaVirtualMachineTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../test/bin/JavaVirtualMachineTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../../test/bin/JavaVirtualMachineTest"
 	cd /workspace/JavaVirtualMachine/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/JavaVirtualMachineTest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

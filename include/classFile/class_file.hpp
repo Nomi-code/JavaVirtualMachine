@@ -1,16 +1,18 @@
 #pragma once
+#include <algorithm>
 #include <fstream>
 #include <cassert>
 #include <ostream>
 #include <system_error>
 #include <iostream>
 #include <spdlog/spdlog.h>
+#include <unordered_map>
 
 #include "../java_base.hpp"
 #include "byte_code_reader.hpp"
 
 namespace raw_jvm_data {
-    using namespace jvm_raw_type;
+    using namespace raw_jvm_type;
     using std::fstream;
     using std::istream;
     using std::nullptr_t;
@@ -46,19 +48,56 @@ namespace raw_jvm_data {
     constexpr u2 ACC_SYNTHETIC = 0x1000;
     constexpr u2 ACC_ENUM = 0x4000;
 
-    class FieldInfo;
-    class MethodInfo;
-    class AttributeInfo;
-    class ConstantInfo;
+    struct ConstantInfo;
+    struct ConstantClass;
+    struct ConstantFieldRef;
+    struct ConstantMethodRef;
+    struct ConstantInterfaceMethodRef;
+    struct ConstantString;
+    struct ConstantInteger;
+    struct ConstantFloat;
+    struct ConstantLong;
+    struct ConstantDouble;
+    struct ConstantNameAndType;
+    struct ConstantUtf8;
+    struct ConstantMethodHandle;
+    struct ConstantMethodType;
+    struct ConstantInvokeDynamic;
 
-    class ConstantInfo {
-      public:
+    struct FieldInfo;
+    struct MethodInfo;
+    struct AttributeInfo;
+
+    class ClassFile;
+
+    using ConstantInfo_ptr = ConstantInfo*;
+    using ConstantClass_ptr = ConstantClass*;
+    using ConstantFieldRef_ptr = ConstantFieldRef*;
+    using ConstantMethodRef_ptr = ConstantMethodRef*;
+    using ConstantInterfaceMethodRef_ptr = ConstantInterfaceMethodRef*;
+    using ConstantString_ptr = ConstantString*;
+    using ConstantInteger_ptr = ConstantInteger*;
+    using ConstantFloat_ptr = ConstantFloat*;
+    using ConstantLong_ptr = ConstantLong*;
+    using ConstantDouble_ptr = ConstantDouble*;
+    using ConstantNameAndType_ptr = ConstantNameAndType*;
+    using ConstantUtf8_ptr = ConstantUtf8*;
+    using ConstantMethodHandle_ptr = ConstantMethodHandle*;
+    using ConstantMethodType_ptr = ConstantMethodType*;
+    using ConstantInvokeDynamic_ptr = ConstantInvokeDynamic*;
+
+    using FieldInfo_ptr = FieldInfo*;
+    using MethodInfo_ptr = MethodInfo*;
+    using AttributeInfo_ptr = AttributeInfo*;
+
+    using ClassFile_ptr = ClassFile*;
+
+    struct ConstantInfo {
         u1 tag;
-        static ConstantInfo* build();
         friend fstream& operator>>(fstream& in, ConstantInfo& ci);
     };
-    class ConstantClass : public ConstantInfo {
-      public:
+
+    struct ConstantClass : public ConstantInfo {
         u2 name_index;
         friend fstream& operator>>(fstream& in, ConstantClass& ci) {
             ByteCodeReader bcr(in);
@@ -66,8 +105,8 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantFieldRef : public ConstantInfo {
-      public:
+
+    struct ConstantFieldRef : public ConstantInfo {
         u2 name_index;
         u2 name_and_type_index;
         friend fstream& operator>>(fstream& in, ConstantFieldRef& ci) {
@@ -77,8 +116,8 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantMethodRef : public ConstantInfo {
-      public:
+
+    struct ConstantMethodRef : public ConstantInfo {
         u2 name_index;
         u2 name_and_type_index;
         friend fstream& operator>>(fstream& in, ConstantMethodRef& ci) {
@@ -88,8 +127,8 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantInterfaceMethodRef : public ConstantInfo {
-      public:
+
+    struct ConstantInterfaceMethodRef : public ConstantInfo {
         u2 name_index;
         u2 name_and_type_index;
         friend fstream& operator>>(fstream& in, ConstantInterfaceMethodRef& ci) {
@@ -99,8 +138,8 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantString : public ConstantInfo {
-      public:
+
+    struct ConstantString : public ConstantInfo {
         u2 string_index;
         friend fstream& operator>>(fstream& in, ConstantString& ci) {
             ByteCodeReader bcr(in);
@@ -108,8 +147,8 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantInteger : public ConstantInfo {
-      public:
+
+    struct ConstantInteger : public ConstantInfo {
         u4 bytes;
         friend fstream& operator>>(fstream& in, ConstantInteger& ci) {
             ByteCodeReader bcr(in);
@@ -117,8 +156,8 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantFloat : public ConstantInfo {
-      public:
+
+    struct ConstantFloat : public ConstantInfo {
         u4 bytes;
         friend fstream& operator>>(fstream& in, ConstantFloat& ci) {
             ByteCodeReader bcr(in);
@@ -126,8 +165,8 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantLong : public ConstantInfo {
-      public:
+
+    struct ConstantLong : public ConstantInfo {
         u4 high_bytes;
         u4 low_bytes;
         friend fstream& operator>>(fstream& in, ConstantLong& ci) {
@@ -137,8 +176,8 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantDouble : public ConstantInfo {
-      public:
+
+    struct ConstantDouble : public ConstantInfo {
         u4 high_bytes;
         u4 low_bytes;
         friend fstream& operator>>(fstream& in, ConstantDouble& ci) {
@@ -148,8 +187,8 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantNameAndType : public ConstantInfo {
-      public:
+
+    struct ConstantNameAndType : public ConstantInfo {
         u2 name_index;
         u2 descriptor_index;
         friend fstream& operator>>(fstream& in, ConstantNameAndType& ci) {
@@ -159,10 +198,10 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantUtf8 : public ConstantInfo, public Printable {
-      public:
+
+    struct ConstantUtf8 : public ConstantInfo, public Printable {
         u2 length;
-        u1* bytes;
+        u1_ptr bytes;
         friend fstream& operator>>(fstream& in, ConstantUtf8& ci) {
             ByteCodeReader bcr(in);
             bcr.read_u2(&ci.length);
@@ -180,7 +219,6 @@ namespace raw_jvm_data {
             return out;
         }
 
-      public:
         void print() const override {
             char* tmp = new char[this->length + 1]{0};
             memcpy(tmp, this->bytes, this->length * sizeof(u1));
@@ -188,8 +226,8 @@ namespace raw_jvm_data {
             delete[] tmp;
         }
     };
-    class ConstantMethodHandle : public ConstantInfo {
-      public:
+
+    struct ConstantMethodHandle : public ConstantInfo {
         u1 reference_kind;
         u2 reference_index;
         friend fstream& operator>>(fstream& in, ConstantMethodHandle& ci) {
@@ -199,8 +237,8 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantMethodType : public ConstantInfo {
-      public:
+
+    struct ConstantMethodType : public ConstantInfo {
         u2 descriptor_index;
         friend fstream& operator>>(fstream& in, ConstantMethodType& ci) {
             ByteCodeReader bcr(in);
@@ -208,8 +246,8 @@ namespace raw_jvm_data {
             return in;
         }
     };
-    class ConstantInvokeDynamic : public ConstantInfo {
-      public:
+
+    struct ConstantInvokeDynamic : public ConstantInfo {
         u2 bootstrap_method_attr_index;
         u2 name_and_type_index;
         friend fstream& operator>>(fstream& in, ConstantInvokeDynamic& ci) {
@@ -220,11 +258,10 @@ namespace raw_jvm_data {
         }
     };
 
-    class AttributeInfo {
-      public:
+    struct AttributeInfo {
         u2 attribute_name_index;
         u4 attribute_length;
-        u1* info;
+        u1_ptr info;
         friend fstream& operator>>(fstream& in, AttributeInfo& ai) {
             ByteCodeReader bcr(in);
             bcr.read_u2(&ai.attribute_name_index);
@@ -237,13 +274,12 @@ namespace raw_jvm_data {
         }
     };
 
-    class FieldInfo {
-      public:
+    struct FieldInfo {
         u2 access_flags;
         u2 name_index;
         u2 descriptor_index;
         u2 attribute_count;
-        AttributeInfo* attributes;
+        AttributeInfo_ptr attributes;
 
         friend fstream& operator>>(fstream& in, FieldInfo& fi) {
             ByteCodeReader bcr(in);
@@ -260,13 +296,12 @@ namespace raw_jvm_data {
         }
     };
 
-    class MethodInfo {
-      public:
+    struct MethodInfo {
         u2 access_flags;
         u2 name_index;
         u2 descriptor_index;
         u2 attribute_count;
-        AttributeInfo* attributes;
+        AttributeInfo_ptr attributes;
 
         friend fstream& operator>>(fstream& in, MethodInfo& mi) {
             ByteCodeReader bcr(in);
@@ -283,73 +318,33 @@ namespace raw_jvm_data {
         }
     };
 
-    class ClassFileUtils {
-      public:
-        static ConstantInfo* build_constant_info(fstream& in, u1 tag) {
-            ConstantInfo* info = nullptr;
-
-#ifndef BUILD_CONSTANT
-#define BUILD_CONSTANT(CONDITION, PTR_TYPE)                                                        \
-    case CONDITION: {                                                                              \
-        PTR_TYPE* ptr = new PTR_TYPE();                                                            \
-        ptr->tag = tag;                                                                            \
-        in >> *ptr;                                                                                \
-        info = ptr;                                                                                \
-        break;                                                                                     \
-    }
-#endif
-            switch (tag) {
-                BUILD_CONSTANT(CONSTANT_Class, ConstantClass);
-                BUILD_CONSTANT(CONSTANT_Fieldref, ConstantFieldRef);
-                BUILD_CONSTANT(CONSTANT_Methodref, ConstantMethodRef);
-                BUILD_CONSTANT(CONSTANT_InterfaceMethodref, ConstantInterfaceMethodRef);
-                BUILD_CONSTANT(CONSTANT_String, ConstantString);
-                BUILD_CONSTANT(CONSTANT_Integer, ConstantInteger);
-                BUILD_CONSTANT(CONSTANT_Float, ConstantFloat);
-                BUILD_CONSTANT(CONSTANT_Long, ConstantLong);
-                BUILD_CONSTANT(CONSTANT_Double, ConstantDouble);
-                BUILD_CONSTANT(CONSTANT_NameAndType, ConstantNameAndType);
-                BUILD_CONSTANT(CONSTANT_Utf8, ConstantUtf8);
-                BUILD_CONSTANT(CONSTANT_MethodHandle, ConstantMethodHandle);
-                BUILD_CONSTANT(CONSTANT_MethodType, ConstantMethodType);
-                BUILD_CONSTANT(CONSTANT_InvokeDynamic, ConstantInvokeDynamic);
-                default: {
-                    spdlog::error("cant resolve tag value: {:x}\n", tag);
-                    assert(false);
-                }
-            }
-
-#ifdef DEBUG
-            if (tag == CONSTANT_Utf8) {
-                ConstantUtf8* ptr = static_cast<ConstantUtf8*>(info);
-                ptr->print();
-            }
-#endif
-            assert(info != nullptr);
-            return info;
-        }
-    };
-
     class ClassFile : public Printable {
-      public:
+      protected:
         u4 magic = 0;
         u2 minor_version = 0;
         u2 major_version = 0;
         u2 constant_pool_count = 0;
-        ConstantInfo** constant_pool = nullptr;
+        ConstantInfo_ptr* constant_pool = nullptr;
         u2 access_flags = 0;
         u2 this_class = 0;
         u2 super_class = 0;
         u2 interfaces_count = 0;
-        u2* interfaces = nullptr;
+        u2_ptr interfaces = nullptr;
         u2 fields_count = 0;
-        FieldInfo* fields = nullptr;
+        FieldInfo_ptr fields = nullptr;
         u2 methods_count = 0;
-        MethodInfo* methods = nullptr;
+        MethodInfo_ptr methods = nullptr;
         u2 attributes_count = 0;
-        AttributeInfo* attributes = nullptr;
+        AttributeInfo_ptr attributes = nullptr;
 
-        ClassFile() = default;
+        ConstantInfo_ptr build_constant_info(fstream& in, u1 tag);
+
+      public:
+        ClassFile(fstream& in);
+        ClassFile() = delete;
+        ClassFile(const ClassFile&) = delete;
+        ClassFile& operator=(const ClassFile&) = delete;
+        ClassFile(ClassFile&&) = delete;
 
         void print() const override {
             spdlog::info("############## class file start ##############");
@@ -369,67 +364,40 @@ namespace raw_jvm_data {
 
             spdlog::info("############## class file end ##############");
         }
-
-        friend fstream& operator>>(fstream& in, ClassFile& cf) {
-            ByteCodeReader bcr(in);
-            bcr.read_u4(&cf.magic);
-            bcr.read_u2(&cf.major_version);
-            bcr.read_u2(&cf.major_version);
-            bcr.read_u2(&cf.constant_pool_count);
-
-            // input constant info, index 0 unused
-            cf.constant_pool = new ConstantInfo*[cf.constant_pool_count + 1]();
-            for (u2 index = 1; index < cf.constant_pool_count; index++) {
-                u1 tag = -1;
-                bcr.read_u1(&tag);
-#ifdef DEBUG
-                spdlog::info("read tag value from constant pool [{0:}]: {1:02x}", index, tag);
-#endif
-                cf.constant_pool[index] = ClassFileUtils::build_constant_info(in, tag);
-                if (cf.constant_pool[index]->tag == CONSTANT_Double ||
-                    cf.constant_pool[index]->tag == CONSTANT_Long) {
-                    // Long and double occupy two constant pool positions
-                    index += 1;
-                }
-            }
-
-            bcr.read_u2(&cf.access_flags);
-            bcr.read_u2(&cf.this_class);
-            bcr.read_u2(&cf.super_class);
-            bcr.read_u2(&cf.interfaces_count);
-
-            if (cf.interfaces_count > 0) {
-                cf.interfaces = new u2[cf.interfaces_count]{0};
-                for (u2 index = 0; index < cf.interfaces_count; index++) {
-                    bcr.read_u2(&cf.interfaces[index]);
-                }
-            }
-
-            if (cf.fields_count > 0) {
-                bcr.read_u2(&cf.fields_count);
-                cf.fields = new FieldInfo[cf.fields_count];
-                for (u2 index = 0; index < cf.fields_count; index++) {
-                    in >> cf.fields[index];
-                }
-            }
-
-            if (cf.methods_count > 0) {
-                bcr.read_u2(&cf.methods_count);
-                cf.methods = new MethodInfo[cf.methods_count];
-                for (u2 index = 0; index < cf.methods_count; index++) {
-                    in >> cf.methods[index];
-                }
-            }
-
-            if (cf.attributes_count > 0) {
-                bcr.read_u2(&cf.attributes_count);
-                cf.attributes = new AttributeInfo[cf.attributes_count];
-                for (u2 index = 0; index < cf.attributes_count; index++) {
-                    in >> cf.attributes[index];
-                }
-            }
-
-            return in;
-        }
     };
+
 } // namespace raw_jvm_data
+
+namespace rt_jvm_data {
+    struct MethodWrapper;
+    struct FieldWrapper;
+    struct AttributeWrapper;
+    class Klass;
+
+    using MethodWrapper_ptr = MethodWrapper*;
+    using FieldWrapper_ptr = FieldWrapper*;
+    using AttributeWrapper_ptr = AttributeWrapper*;
+    using Klass_ptr = Klass*;
+
+    struct MethodWrapper {
+        raw_jvm_data::MethodInfo_ptr mptr;
+        MethodWrapper(raw_jvm_data::MethodInfo_ptr);
+	};
+
+    struct FieldWrapper {};
+
+    struct AttributeWrapper {
+        
+	};
+
+    class Klass : public raw_jvm_data::ClassFile {
+      private:
+        std::unordered_map<int, MethodWrapper> rt_methods;
+        std::unordered_map<int, FieldWrapper> rt_fields;
+        std::unordered_map<int, AttributeWrapper> rt_attributes;
+
+      public:
+        Klass(std::fstream& in);
+    };
+    
+}; // namespace rt_jvm_data
