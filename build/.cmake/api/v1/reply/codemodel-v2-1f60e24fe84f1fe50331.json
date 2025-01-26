@@ -79,14 +79,14 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "JavaVirtualMachine::@145eef247bfb46b6828c",
-					"jsonFile" : "target-JavaVirtualMachine-DEBUG-a4fb37ce7e0866794027.json",
+					"jsonFile" : "target-JavaVirtualMachine-DEBUG-6bf7c6234f04e4925ba7.json",
 					"name" : "JavaVirtualMachine",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "JavaVirtualMachineTest::@36f028580bb02cc8272a",
-					"jsonFile" : "target-JavaVirtualMachineTest-DEBUG-266060b0ede1b70c2c86.json",
+					"jsonFile" : "target-JavaVirtualMachineTest-DEBUG-ba30a74050c44d5683f6.json",
 					"name" : "JavaVirtualMachineTest",
 					"projectIndex" : 0
 				},
@@ -123,6 +123,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 7
 	}
 }

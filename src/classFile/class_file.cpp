@@ -1,5 +1,6 @@
 #include "../../include/classFile/class_file.hpp"
 #include "../../include/runtime/string_pool.hpp"
+#include "java_base.hpp"
 #include <cassert>
 #include <cstddef>
 #include <fstream>
@@ -10,7 +11,6 @@
 using namespace raw_jvm_data;
 using namespace rt_jvm_data;
 using std::string;
-using std::unordered_map;
 
 ConstantInfo_ptr ClassFile::build_constant_info(fstream& in, u1 tag) {
     ConstantInfo* info = nullptr;
@@ -84,7 +84,6 @@ ClassFile::ClassFile(std::fstream& in) {
         }
     }
 
-    
     bcr.read_u2(&this->fields_count);
     if (this->fields_count > 0) {
         this->fields = new FieldInfo[this->fields_count];
@@ -110,53 +109,88 @@ ClassFile::ClassFile(std::fstream& in) {
     }
 }
 
-MethodWrapper::MethodWrapper(MethodInfo_ptr mptr) : mptr(mptr) {
+MethodWrapper::MethodWrapper(MethodInfo_ptr mptr) : mptr(mptr), code(nullptr) {
+    // TODO
+}
+
+FieldWrapper::FieldWrapper(raw_jvm_data::FieldInfo_ptr fptr, u2 object_field_size,
+                           u2 static_field_offset)
+    : fptr(fptr), object_field_offset(object_field_size), static_field_offset(static_field_offset) {
+    // TODO
+}
+
+std::string Klass::generate_function_id(raw_jvm_data::ConstantUtf8_ptr name_u8ptr,
+                                        raw_jvm_data::ConstantUtf8_ptr descriptor_u8ptr) {
+    return std::string(reinterpret_cast<char*>(name_u8ptr->bytes), name_u8ptr->length) + ':' +
+           std::string(reinterpret_cast<char*>(descriptor_u8ptr->bytes), descriptor_u8ptr->length);
+}
+
+std::string Klass::generate_function_id(raw_jvm_data::ConstantNameAndType_ptr p) {
+    const auto& name_u8ptr = static_cast<ConstantUtf8_ptr>(this->constant_pool[p->name_index]);
+    const auto& descriptor_u8ptr =
+        static_cast<ConstantUtf8_ptr>(this->constant_pool[p->descriptor_index]);
+
+    return this->generate_function_id(name_u8ptr, descriptor_u8ptr);
+}
+
+type Klass::reslove_type(raw_jvm_data::ConstantUtf8_ptr u8ptr) {
+    assert(u8ptr->length > 0);
+
+    const auto& first_ch = u8ptr->bytes[0];
+
+    if (!TYPE_CHAC_REC.contains(first_ch)) {
+        spdlog::error("can't reslove type {}",
+                      std::string(reinterpret_cast<char*>(u8ptr->bytes), u8ptr->length));
+        assert(false);
+    }
+    return TYPE_CHAC_REC[first_ch];
+}
+
+type Klass::reslove_type(raw_jvm_data::ConstantNameAndType_ptr nat_ptr) {
+    return this->reslove_type(
+        static_cast<ConstantUtf8_ptr>(this->constant_pool[nat_ptr->descriptor_index]));
 }
 
 Klass::Klass(std::fstream& in) : raw_jvm_data::ClassFile(in) {
-    unordered_map<string, MethodWrapper> method_wrapper_rec;
-    unordered_map<string, FieldWrapper> field_wrapper_rec;
-    spdlog::error("start validate {:d}", this->methods_count);
     for (size_t index = 0; index < this->methods_count; index++) {
-        MethodInfo_ptr mptr = &this->methods[index];
-        ConstantNameAndType_ptr natptr =
-            static_cast<ConstantNameAndType_ptr>(this->constant_pool[mptr->descriptor_index]);
+        const auto& mptr = &this->methods[index];
 
-        ConstantUtf8_ptr name_u8ptr =
+        const auto& name_u8ptr =
             static_cast<ConstantUtf8_ptr>(this->constant_pool[mptr->name_index]);
-        ConstantUtf8_ptr nat_name_u8_ptr =
-            static_cast<ConstantUtf8_ptr>(this->constant_pool[natptr->name_index]);
-        ConstantUtf8_ptr nat_des_u8_ptr =
-            static_cast<ConstantUtf8_ptr>(this->constant_pool[natptr->descriptor_index]);
+        const auto& descriptor_u8ptr =
+            static_cast<ConstantUtf8_ptr>(this->constant_pool[mptr->descriptor_index]);
 
-        assert(natptr->tag == CONSTANT_NameAndType);
         assert(name_u8ptr->tag == CONSTANT_Utf8);
-        assert(nat_name_u8_ptr->tag == CONSTANT_Utf8);
-        assert(nat_des_u8_ptr->tag == CONSTANT_Utf8);
+        assert(descriptor_u8ptr->tag == CONSTANT_Utf8);
 
-        spdlog::info("reslove method {}.{}:{}", (char*)name_u8ptr->bytes,
-                     (char*)nat_name_u8_ptr->bytes, (char*)nat_des_u8_ptr->bytes);
+        const auto& function_id = generate_function_id(name_u8ptr, descriptor_u8ptr);
+
+        this->rt_methods.emplace(function_id, mptr);
+        spdlog::info("reslove method {}", function_id);
+    }
+
+    u2 object_field_offset = 0, static_field_offset = 0;
+    for (size_t index = 0; index < this->fields_count; index++) {
+        const auto& fptr = &this->fields[index];
+
+        const auto& name_u8ptr =
+            static_cast<ConstantUtf8_ptr>(this->constant_pool[fptr->name_index]);
+        const auto& descriptor_u8ptr =
+            static_cast<ConstantUtf8_ptr>(this->constant_pool[fptr->descriptor_index]);
+
+        assert(name_u8ptr->tag == CONSTANT_Utf8);
+        assert(descriptor_u8ptr->tag == CONSTANT_Utf8);
+
+        const auto& field_id =
+            std::string(reinterpret_cast<char*>(name_u8ptr->bytes), name_u8ptr->length);
+
+        const auto& field_type = this->reslove_type(descriptor_u8ptr);
+        const auto& field_size = TYPE_SIZE_REC[field_type];
+
+        this->rt_fields.emplace(field_id,
+                                FieldWrapper(fptr, static_field_offset, object_field_offset));
+        fptr->access_flags& ACC_STATIC ? static_field_offset += field_size
+                                       : object_field_offset += field_size;
+        spdlog::info("reslove field {}", field_id);
     }
 }
-
-// void ClassFile::reinterpret() {
-//     unordered_map<string, MethodInfo_ptr> method_rec;
-//     unordered_map<string, FieldInfo_ptr> field_rec;
-
-//     for (size_t index = 0; index < this->fields_count; index++) {
-
-//     }
-
-//     for (size_t index = 0; index < this->constant_pool_count; index++) {
-//         ConstantInfo_ptr cptr = this->constant_pool[index];
-//         switch (cptr->tag) {
-//             case CONSTANT_Utf8: {
-//                 ConstantUtf8_ptr u8ptr = static_cast<ConstantUtf8_ptr>(cptr);
-//                 break;
-//             }
-//             default: {
-//                 spdlog::error("No such constant type: {:X}", cptr->tag);
-//             }
-//         }
-//     }
-// }

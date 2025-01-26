@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../bin/JavaVirtualMachine"
-  "../../bin/JavaVirtualMachine.pdb"
+  "/workspace/JavaVirtualMachine/bin/JavaVirtualMachine"
+  "/workspace/JavaVirtualMachine/bin/JavaVirtualMachine.pdb"
   "CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.o"
   "CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.o.d"
   "CMakeFiles/JavaVirtualMachine.dir/main.cpp.o"

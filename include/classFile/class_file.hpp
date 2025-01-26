@@ -205,7 +205,8 @@ namespace raw_jvm_data {
         friend fstream& operator>>(fstream& in, ConstantUtf8& ci) {
             ByteCodeReader bcr(in);
             bcr.read_u2(&ci.length);
-            ci.bytes = new u1[ci.length];
+            // to c string
+            ci.bytes = new u1[ci.length + 1]{0};
             for (size_t index = 0; index < ci.length; index++) {
                 bcr.read_u1(&ci.bytes[index]);
             }
@@ -266,7 +267,8 @@ namespace raw_jvm_data {
             ByteCodeReader bcr(in);
             bcr.read_u2(&ai.attribute_name_index);
             bcr.read_u4(&ai.attribute_length);
-
+            // allocate new array
+            ai.info = new u1[ai.attribute_length];
             for (u4 index = 0; index < ai.attribute_length; index++) {
                 bcr.read_u1(&ai.info[index]);
             }
@@ -369,6 +371,17 @@ namespace raw_jvm_data {
 } // namespace raw_jvm_data
 
 namespace rt_jvm_data {
+    enum class type { Jbyte, Jchar, Jshort, Jint, Jfloat, Jdouble, Jreference };
+
+    static std::unordered_map<type, raw_jvm_type::u1> TYPE_SIZE_REC{
+        {type::Jbyte, 1},  {type::Jchar, 2},   {type::Jshort, 2},    {type::Jint, 4},
+        {type::Jfloat, 4}, {type::Jdouble, 8}, {type::Jreference, 8}};
+
+    static std::unordered_map<char, type> TYPE_CHAC_REC{
+        {'B', type::Jbyte},      {'C', type::Jchar},     {'S', type::Jshort},
+        {'I', type::Jint},       {'F', type::Jfloat},    {'D', type::Jdouble},
+        {'L', type::Jreference}, {'[', type::Jreference}};
+
     struct MethodWrapper;
     struct FieldWrapper;
     struct AttributeWrapper;
@@ -381,23 +394,35 @@ namespace rt_jvm_data {
 
     struct MethodWrapper {
         raw_jvm_data::MethodInfo_ptr mptr;
+        // late init
+        raw_jvm_type::u1_ptr code;
         MethodWrapper(raw_jvm_data::MethodInfo_ptr);
-	};
+    };
 
-    struct FieldWrapper {};
+    struct FieldWrapper {
+        raw_jvm_data::FieldInfo_ptr fptr;
+        raw_jvm_type::u2 object_field_offset;
+        raw_jvm_type::u2 static_field_offset;
+        FieldWrapper(raw_jvm_data::FieldInfo_ptr, raw_jvm_type::u2, raw_jvm_type::u2);
+    };
 
-    struct AttributeWrapper {
-        
-	};
+    struct AttributeWrapper {};
 
     class Klass : public raw_jvm_data::ClassFile {
       private:
-        std::unordered_map<int, MethodWrapper> rt_methods;
-        std::unordered_map<int, FieldWrapper> rt_fields;
-        std::unordered_map<int, AttributeWrapper> rt_attributes;
+        std::unordered_map<std::string, MethodWrapper> rt_methods;
+        std::unordered_map<std::string, FieldWrapper> rt_fields;
+        std::unordered_map<std::string, AttributeWrapper> rt_attributes;
+
+        std::string generate_function_id(raw_jvm_data::ConstantUtf8_ptr name_u8ptr,
+                                         raw_jvm_data::ConstantUtf8_ptr descri_u8ptr);
+        std::string generate_function_id(raw_jvm_data::ConstantNameAndType_ptr);
+
+        type reslove_type(raw_jvm_data::ConstantUtf8_ptr);
+        type reslove_type(raw_jvm_data::ConstantNameAndType_ptr);
 
       public:
         Klass(std::fstream& in);
     };
-    
+
 }; // namespace rt_jvm_data

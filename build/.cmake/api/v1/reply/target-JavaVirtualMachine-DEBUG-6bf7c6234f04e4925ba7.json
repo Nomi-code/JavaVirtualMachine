@@ -13,6 +13,9 @@
 			"add_executable",
 			"add_link_options",
 			"target_link_libraries",
+			"set_target_properties",
+			"include",
+			"find_package",
 			"add_compile_options",
 			"target_include_directories",
 			"include_directories",
@@ -21,7 +24,9 @@
 		"files" : 
 		[
 			"src/CMakeLists.txt",
-			"CMakeLists.txt"
+			"CMakeLists.txt",
+			"/usr/lib/llvm-14/lib/cmake/llvm/LLVMExports.cmake",
+			"/usr/lib/llvm-14/cmake/LLVMConfig.cmake"
 		],
 		"nodes" : 
 		[
@@ -68,25 +73,117 @@
 				"parent" : 0
 			},
 			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"file" : 3,
+				"parent" : 8
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 323,
+				"parent" : 9
+			},
+			{
+				"file" : 2,
+				"parent" : 10
+			},
+			{
 				"command" : 3,
+				"file" : 2,
+				"line" : 449,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1205,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 253,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 120,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1072,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 141,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 337,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 92,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 358,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 1079,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 309,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 68,
+				"parent" : 11
+			},
+			{
+				"command" : 6,
 				"file" : 1,
 				"line" : 26,
 				"parent" : 2
 			},
 			{
-				"command" : 4,
+				"command" : 7,
 				"file" : 0,
 				"line" : 14,
 				"parent" : 0
 			},
 			{
-				"command" : 5,
+				"command" : 8,
 				"file" : 0,
 				"line" : 38,
 				"parent" : 0
 			},
 			{
-				"command" : 6,
+				"command" : 9,
 				"file" : 0,
 				"line" : 12,
 				"parent" : 0
@@ -99,26 +196,15 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g   -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS"
+					"fragment" : "-g -std=gnu++20   -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS"
 				},
 				{
-					"backtrace" : 8,
+					"backtrace" : 24,
 					"fragment" : "-std=c++20"
-				},
-				{
-					"fragment" : "-std=gnu++20"
 				}
 			],
 			"defines" : 
 			[
-				{
-					"backtrace" : 5,
-					"define" : "FMT_LOCALE"
-				},
-				{
-					"backtrace" : 5,
-					"define" : "FMT_SHARED"
-				},
 				{
 					"backtrace" : 6,
 					"define" : "SPDLOG_COMPILED_LIB"
@@ -127,11 +213,11 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 9,
+					"backtrace" : 25,
 					"path" : "/workspace/JavaVirtualMachine/include"
 				},
 				{
-					"backtrace" : 10,
+					"backtrace" : 26,
 					"path" : "/usr/lib/llvm-14/include"
 				}
 			],
@@ -177,7 +263,7 @@
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libfmt.so.8.1.1",
+				"fragment" : "/usr/local/lib/libfmt.a",
 				"role" : "libraries"
 			},
 			{
@@ -221,138 +307,167 @@
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-Wl,--as-needed",
-				"role" : "libraries"
-			},
-			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMPasses.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 13,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMCoroutines.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 13,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMipo.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 14,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMFrontendOpenMP.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 14,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMIRReader.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 15,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMAsmParser.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 14,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMLinker.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 13,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMObjCARCOpts.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 13,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMVectorize.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMExecutionEngine.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMJITLink.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMOrcTargetProcess.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMOrcShared.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMRuntimeDyld.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 16,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMAsmPrinter.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 17,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMDebugInfoMSF.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 16,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMInstrumentation.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 16,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMGlobalISel.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 16,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMSelectionDAG.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 16,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMCodeGen.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMBitWriter.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMTarget.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 13,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMScalarOpts.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 13,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMAggressiveInstCombine.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 13,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMInstCombine.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMTransformUtils.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMAnalysis.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 16,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMProfileData.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 17,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMDebugInfoDWARF.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMObject.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMBitReader.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 18,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMTextAPI.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 16,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMCFGuard.a",
 				"role" : "libraries"
 			},
@@ -362,58 +477,72 @@
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 19,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMRemarks.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 20,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMBitstreamReader.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 21,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMMCParser.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMMCDisassembler.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 12,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMMC.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 19,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMBinaryFormat.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 22,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMDebugInfoCodeView.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 19,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMSupport.a",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 23,
 				"fragment" : "-lrt",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 23,
 				"fragment" : "-ldl",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 23,
 				"fragment" : "-lm",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 23,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libz.so",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 23,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libtinfo.so",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 23,
 				"fragment" : "/usr/lib/llvm-14/lib/libLLVMDemangle.a",
 				"role" : "libraries"
 			}
@@ -442,19 +571,19 @@
 	"sources" : 
 	[
 		{
-			"backtrace" : 11,
+			"backtrace" : 27,
 			"compileGroupIndex" : 0,
 			"path" : "src/classFile/class_file.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 11,
+			"backtrace" : 27,
 			"compileGroupIndex" : 0,
 			"path" : "src/runtime/klass.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 11,
+			"backtrace" : 27,
 			"compileGroupIndex" : 0,
 			"path" : "src/main.cpp",
 			"sourceGroupIndex" : 0
