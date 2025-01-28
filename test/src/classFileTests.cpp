@@ -6,7 +6,8 @@
 #include <spdlog/spdlog.h>
 #include <filesystem>
 
-#include "../../include/classFile/class_file.hpp"
+#include "../../include/runtime/klass.hpp"
+
 
 static const std::string test_class_file =
     "/workspace/JavaVirtualMachine/resource/FakePhoenixApplication.class";
