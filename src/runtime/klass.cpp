@@ -1,11 +1,13 @@
 #include "runtime/klass.hpp"
-#include "classFile/class_file.hpp"
+#include <cstdlib>
 
 using namespace rt_jvm_data;
 using namespace raw_jvm_data;
 
+std::filesystem::path KlassLoader::basic_path = std::getenv("JAVA_HOME");
+
 AttributeWrapper::AttributeWrapper(const raw_jvm_data::AttributeInfo_ptr aaptr) : aptr(aaptr) {
-    // TODO
+    // pass
 }
 
 MethodWrapper::MethodWrapper(const Klass& kls, const MethodInfo_ptr mptr)
@@ -43,6 +45,12 @@ FieldWrapper::FieldWrapper(const Klass& kls, const raw_jvm_data::FieldInfo_ptr f
     }
 }
 
+Klass_ptr KlassLoader::load_klass(const std::string& klass_name) {
+    std::filesystem::path p = klass_name;
+
+    return nullptr;
+}
+
 std::string Klass::generate_function_id(raw_jvm_data::ConstantUtf8_ptr name_u8ptr,
                                         raw_jvm_data::ConstantUtf8_ptr descriptor_u8ptr) {
     return std::string(reinterpret_cast<char*>(name_u8ptr->bytes), name_u8ptr->length) + ':' +
@@ -76,6 +84,12 @@ type Klass::reslove_type(raw_jvm_data::ConstantNameAndType_ptr nat_ptr) {
 }
 
 Klass::Klass(std::fstream& in) : raw_jvm_data::ClassFile(in) {
+    const auto& this_class = static_cast<ConstantClass_ptr>(this->constant_pool[this->this_class]);
+    const auto& this_class_name =
+        static_cast<ConstantUtf8_ptr>(this->constant_pool[this_class->name_index]);
+    this->klass_name = std::string(
+        std::string(reinterpret_cast<char*>(this_class_name->bytes), this_class_name->length));
+    
     for (size_t index = 0; index < this->methods_count; index++) {
         const auto& mptr = &this->methods[index];
 
@@ -130,4 +144,8 @@ Klass::Klass(std::fstream& in) : raw_jvm_data::ClassFile(in) {
 
         this->rt_attributes.emplace(std::move(attr_name), aptr);
     }
+}
+
+const std::string& Klass::get_klass_name() const {
+    return this->klass_name;
 }

@@ -1,0 +1,176 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "test",
+					"jsonFile" : "directory-test-Debug-451c0598f41488bb20b9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "test",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src",
+					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						4,
+						5,
+						7,
+						8,
+						9
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "JavaVirtualMachine",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "AArch64TargetParserTableGen::@145eef247bfb46b6828c",
+					"jsonFile" : "target-AArch64TargetParserTableGen-Debug-8555633486febc17e4c0.json",
+					"name" : "AArch64TargetParserTableGen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ARMTargetParserTableGen::@145eef247bfb46b6828c",
+					"jsonFile" : "target-ARMTargetParserTableGen-Debug-f5789248c319d1cd7140.json",
+					"name" : "ARMTargetParserTableGen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "JavaVirtualMachine::@145eef247bfb46b6828c",
+					"jsonFile" : "target-JavaVirtualMachine-Debug-18a83502efd625d27d26.json",
+					"name" : "JavaVirtualMachine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "JavaVirtualMachineTest::@36f028580bb02cc8272a",
+					"jsonFile" : "target-JavaVirtualMachineTest-Debug-1da86387de87662802be.json",
+					"name" : "JavaVirtualMachineTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "RISCVTargetParserTableGen::@145eef247bfb46b6828c",
+					"jsonFile" : "target-RISCVTargetParserTableGen-Debug-dba22cabd93715c8899b.json",
+					"name" : "RISCVTargetParserTableGen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "acc_gen::@145eef247bfb46b6828c",
+					"jsonFile" : "target-acc_gen-Debug-0855bdd0b1053e7559f8.json",
+					"name" : "acc_gen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clean-all::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clean-all-Debug-ee74705586cafb2708f0.json",
+					"name" : "clean-all",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "intrinsics_gen::@145eef247bfb46b6828c",
+					"jsonFile" : "target-intrinsics_gen-Debug-e6370a5e519a082eed1f.json",
+					"name" : "intrinsics_gen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "omp_gen::@145eef247bfb46b6828c",
+					"jsonFile" : "target-omp_gen-Debug-f2bdac5aa16903862241.json",
+					"name" : "omp_gen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "vt_gen::@145eef247bfb46b6828c",
+					"jsonFile" : "target-vt_gen-Debug-69947146e529772b198c.json",
+					"name" : "vt_gen",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/workspace/JavaVirtualMachine/build",
+		"source" : "/workspace/JavaVirtualMachine"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

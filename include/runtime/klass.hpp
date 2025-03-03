@@ -1,8 +1,13 @@
 #pragma once
 
+#include <memory>
+#include <unordered_map>
+#include <filesystem>
+#include <cstdlib>
+
 #include "java_base.hpp"
 #include "string_pool.hpp"
-#include "../classFile/class_file.hpp"
+#include "classFile/class_file.hpp"
 
 namespace rt_jvm_data {
 
@@ -22,12 +27,14 @@ namespace rt_jvm_data {
     struct FieldWrapper;
     struct AttributeWrapper;
     class Klass;
+    class KlassLoader;
 
     using RuntimeConstantItem_ptr = RuntimeConstantItem*;
     using MethodWrapper_ptr = MethodWrapper*;
     using FieldWrapper_ptr = FieldWrapper*;
     using AttributeWrapper_ptr = AttributeWrapper*;
     using Klass_ptr = Klass*;
+    using KlassLoader_ptr = KlassLoader*;
 
     struct RuntimeConstantItem {};
 
@@ -56,11 +63,24 @@ namespace rt_jvm_data {
                      const raw_jvm_type::u2);
     };
 
+    class KlassLoader {
+      private:
+        static std::filesystem::path basic_path;
+        std::unordered_map<std::string, std::shared_ptr<Klass>> loaded_klasses;
+
+      public:
+        KlassLoader() = default;
+        Klass_ptr load_klass(const std::string& klass_name);
+    };
+
     class Klass : public raw_jvm_data::ClassFile {
       private:
         friend struct MethodWrapper;
         friend struct FieldWrapper;
         friend struct AttributeWrapper;
+
+        std::string klass_name;
+        KlassLoader_ptr klass_loader;
 
         std::unordered_map<raw_jvm_type::u2, RuntimeConstantItem_ptr> translated_constant_pool;
         std::unordered_map<std::string, MethodWrapper> rt_methods;
@@ -76,6 +96,7 @@ namespace rt_jvm_data {
 
       public:
         Klass(std::fstream& in);
+        const std::string& get_klass_name() const;
     };
 
 }; // namespace rt_jvm_data

@@ -1,3 +1,4 @@
+/workspace/JavaVirtualMachine/build/CMakeFiles/clean-all.dir
 /workspace/JavaVirtualMachine/build/CMakeFiles/test.dir
 /workspace/JavaVirtualMachine/build/CMakeFiles/edit_cache.dir
 /workspace/JavaVirtualMachine/build/CMakeFiles/rebuild_cache.dir
@@ -6,8 +7,12 @@
 /workspace/JavaVirtualMachine/build/test/CMakeFiles/edit_cache.dir
 /workspace/JavaVirtualMachine/build/test/CMakeFiles/rebuild_cache.dir
 /workspace/JavaVirtualMachine/build/src/CMakeFiles/intrinsics_gen.dir
+/workspace/JavaVirtualMachine/build/src/CMakeFiles/vt_gen.dir
 /workspace/JavaVirtualMachine/build/src/CMakeFiles/omp_gen.dir
 /workspace/JavaVirtualMachine/build/src/CMakeFiles/acc_gen.dir
+/workspace/JavaVirtualMachine/build/src/CMakeFiles/ARMTargetParserTableGen.dir
+/workspace/JavaVirtualMachine/build/src/CMakeFiles/AArch64TargetParserTableGen.dir
+/workspace/JavaVirtualMachine/build/src/CMakeFiles/RISCVTargetParserTableGen.dir
 /workspace/JavaVirtualMachine/build/src/CMakeFiles/JavaVirtualMachine.dir
 /workspace/JavaVirtualMachine/build/src/CMakeFiles/test.dir
 /workspace/JavaVirtualMachine/build/src/CMakeFiles/edit_cache.dir

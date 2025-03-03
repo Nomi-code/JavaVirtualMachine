@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.20.0)
 project(JavaVirtualMachine VERSION 0.1.0 LANGUAGES C CXX)
 
+# cmake_policy(SET CMP0167 NEW)
+
 include(FetchContent)
 
 set(JavaVirtualMachine PROJECT_NAME)
@@ -33,3 +35,9 @@ add_subdirectory(${DIR_SRC_PATH})
 include_directories(${DIR_INCLUDE_PATH})
 
 enable_testing()
+
+add_custom_target(clean-all
+    COMMAND rm -rf bin/*
+    COMMAND rm -rf build/*
+    COMMAND rm -rf test/bin/*
+)

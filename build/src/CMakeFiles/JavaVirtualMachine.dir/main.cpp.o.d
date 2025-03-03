@@ -1,10 +1,10 @@
 src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o: \
   /workspace/JavaVirtualMachine/src/main.cpp \
   /workspace/JavaVirtualMachine/src/../include/classFile/class_file.hpp \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/algorithm \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/utility \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++config.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/algorithm \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_algobase.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/c++config.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
   /usr/include/features.h /usr/include/features-time64.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
@@ -12,39 +12,45 @@ src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/pstl/pstl_config.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_relops.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/move.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/compare \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/concepts \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/initializer_list \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/numeric_traits.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/cpp_type_traits.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/type_traits.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/functexcept.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception_defines.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator_base_types.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/iterator_concepts.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ptr_traits.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ranges_cmp.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator_base_funcs.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/concept_check.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/assertions.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/new \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/debug/debug.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/predefined_ops.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algo.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cstdlib \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/pstl/pstl_config.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/functexcept.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/exception_defines.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/cpp_type_traits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/type_traits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/numeric_traits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_pair.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/type_traits \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/move.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/utility.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/compare \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/concepts \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/iterator_concepts.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ptr_traits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ranges_cmp.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_funcs.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/concept_check.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/debug/assertions.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/new \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/exception.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_construct.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/debug/debug.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/predefined_ops.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_algo.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/algorithmfwd.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/initializer_list \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_heap.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_tempbuf.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/uniform_int_dist.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cstdlib \
   /usr/include/stdlib.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
-  /usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h \
+  /usr/lib/llvm-20/lib/clang/20/include/stddef.h \
+  /usr/lib/llvm-20/lib/clang/20/include/__stddef_size_t.h \
+  /usr/lib/llvm-20/lib/clang/20/include/__stddef_wchar_t.h \
+  /usr/lib/llvm-20/lib/clang/20/include/__stddef_null.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
@@ -78,40 +84,57 @@ src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_abs.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/algorithmfwd.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_heap.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_tempbuf.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/uniform_int_dist.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ranges_algo.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ranges_algobase.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iterator \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iosfwd \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stringfwd.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/memoryfwd.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/postypes.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cwchar \
-  /usr/include/wchar.h \
-  /usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/std_abs.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ranges_algo.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ranges_algobase.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ranges_base.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/max_size_type.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/numbers \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/invoke.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ranges_util.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/pstl/glue_algorithm_defs.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/pstl/execution_defs.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/fstream \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/istream \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ios \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/iosfwd \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stringfwd.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/memoryfwd.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/postypes.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cwchar \
+  /usr/include/wchar.h /usr/lib/llvm-20/lib/clang/20/include/stdarg.h \
+  /usr/lib/llvm-20/lib/clang/20/include/__stdarg___gnuc_va_list.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stream_iterator.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/streambuf_iterator.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/streambuf \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/localefwd.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++locale.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/clocale \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/exception \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/exception_ptr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/cxxabi_init_exception.h \
+  /usr/lib/llvm-20/lib/clang/20/include/__stddef_header_macro.h \
+  /usr/lib/llvm-20/lib/clang/20/include/__stddef_ptrdiff_t.h \
+  /usr/lib/llvm-20/lib/clang/20/include/__stddef_nullptr_t.h \
+  /usr/lib/llvm-20/lib/clang/20/include/__stddef_max_align_t.h \
+  /usr/lib/llvm-20/lib/clang/20/include/__stddef_offsetof.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/typeinfo \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/hash_bytes.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/nested_exception.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/char_traits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cstdint \
+  /usr/lib/llvm-20/lib/clang/20/include/stdint.h /usr/include/stdint.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/localefwd.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/c++locale.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/clocale \
   /usr/include/locale.h /usr/include/x86_64-linux-gnu/bits/locale.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cctype \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cctype \
   /usr/include/ctype.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ios_base.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/atomicity.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/gthr.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/gthr-default.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ios_base.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/atomicity.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/gthr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/gthr-default.h \
   /usr/include/pthread.h /usr/include/sched.h \
   /usr/include/x86_64-linux-gnu/bits/sched.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
@@ -123,113 +146,75 @@ src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/atomic_word.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/atomic_word.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/locale_classes.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/string \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/char_traits.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cstdint \
-  /usr/lib/llvm-14/lib/clang/14.0.0/include/stdint.h \
-  /usr/include/stdint.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ostream_insert.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/cxxabi_forced.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_function.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward/binders.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/range_access.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/alloc_traits.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/string_view \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/functional_hash.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hash_bytes.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ranges_base.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/max_size_type.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/numbers \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/string_view.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/string_conversions.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cstdio \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_classes.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/string \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/allocator.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/c++allocator.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/new_allocator.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ostream_insert.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/cxxabi_forced.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_function.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/backward/binders.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/refwrap.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/range_access.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/basic_string.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/alloc_traits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/alloc_traits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/string_view \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/functional_hash.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/string_view.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/string_conversions.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cstdio \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cerrno \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cerrno \
   /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
   /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
   /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/charconv.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/locale_classes.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/system_error \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/stdexcept \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/exception \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception_ptr.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/cxxabi_init_exception.h \
-  /usr/lib/llvm-14/lib/clang/14.0.0/include/__stddef_max_align_t.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/typeinfo \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/nested_exception.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/streambuf.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ranges_util.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/pstl/glue_algorithm_defs.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/functional \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/array \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/uses_allocator.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/refwrap.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/unordered_map \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/aligned_buffer.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/hashtable_policy.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/enable_special_members.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/node_handle.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_map.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/erase_if.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/vector \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_bvector.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/vector.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/pstl/execution_defs.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/fstream \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/istream \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ios \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_ios.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/locale_facets.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cwctype \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/charconv.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/basic_string.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_classes.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/system_error \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/error_constants.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/stdexcept \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/streambuf \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/streambuf.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/basic_ios.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_facets.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cwctype \
   /usr/include/wctype.h \
   /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/locale_facets.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_ios.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ostream \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ostream.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/istream.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/codecvt.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++io.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/fstream.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cassert \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/ctype_base.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/streambuf_iterator.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_facets.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/basic_ios.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ostream \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ostream.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/istream.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/codecvt.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/basic_file.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/c++io.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/fstream.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cassert \
   /usr/include/assert.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iostream \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/iostream \
   /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
   /usr/local/include/spdlog/details/null_mutex.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/atomic \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/atomic_base.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/atomic_lockfree_defines.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/atomic_wait.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/climits \
-  /usr/lib/llvm-14/lib/clang/14.0.0/include/limits.h \
-  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/atomic \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/atomic_base.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/atomic_lockfree_defines.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/atomic_wait.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/climits \
+  /usr/lib/llvm-20/lib/clang/20/include/limits.h /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
   /usr/include/x86_64-linux-gnu/bits/local_lim.h \
   /usr/include/linux/limits.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
@@ -246,34 +231,57 @@ src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/asm/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
   /usr/include/x86_64-linux-gnu/bits/syscall.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_mutex.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/std_mutex.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/utility \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_relops.h \
   /usr/local/include/spdlog/tweakme.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/chrono \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ratio \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/limits \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ctime \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/parse_numbers.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_raw_storage_iter.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/align.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bit \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocated_ptr.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/concurrence.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_atomic.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward/auto_ptr.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ranges_uninitialized.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/uses_allocator_args.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/pstl/glue_memory_defs.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/chrono \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/chrono.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ratio \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/limits \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ctime \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/parse_numbers.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/sstream \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/sstream.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/functional \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tuple \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/uses_allocator.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/std_function.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/unordered_map \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/aligned_buffer.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/hashtable.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/hashtable_policy.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/enable_special_members.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/node_handle.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/unordered_map.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/erase_if.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/vector \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_uninitialized.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_vector.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_bvector.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/vector.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/array \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/memory \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_raw_storage_iter.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/align.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bit \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/unique_ptr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/shared_ptr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/shared_ptr_base.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/allocated_ptr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/concurrence.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/shared_ptr_atomic.h \
+  /usr/lib/llvm-20/lib/clang/20/include/sanitizer/tsan_interface.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/backward/auto_ptr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ranges_uninitialized.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/uses_allocator_args.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/pstl/glue_memory_defs.h \
   /usr/local/include/spdlog/fmt/fmt.h \
   /usr/local/include/spdlog/fmt/bundled/core.h \
   /usr/local/include/spdlog/fmt/bundled/format.h \
   /usr/local/include/spdlog/fmt/bundled/base.h /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cstddef \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cmath \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cmath \
   /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
   /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
   /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -283,34 +291,35 @@ src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/specfun.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/gamma.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/special_function_util.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/bessel_function.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/beta_function.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/ell_integral.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/exp_integral.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/hypergeometric.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/legendre_function.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/modified_bessel_func.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/poly_hermite.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/poly_laguerre.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cstring \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/specfun.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/gamma.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/special_function_util.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/bessel_function.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/beta_function.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/ell_integral.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/exp_integral.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/hypergeometric.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/legendre_function.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/modified_bessel_func.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/poly_hermite.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/poly_laguerre.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tr1/riemann_zeta.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cstddef \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cstring \
   /usr/local/include/spdlog/details/registry.h \
   /usr/local/include/spdlog/details/periodic_worker.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/condition_variable \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_lock.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/stop_token \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_thread.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/semaphore \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/semaphore_base.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/atomic_timed_wait.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/this_thread_sleep.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/condition_variable \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/unique_lock.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/stop_token \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/std_thread.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/semaphore \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/semaphore_base.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/atomic_timed_wait.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/this_thread_sleep.h \
   /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/semaphore.h \
   /usr/include/x86_64-linux-gnu/bits/semaphore.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/mutex \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/thread \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/mutex \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/thread \
   /usr/local/include/spdlog/details/synchronous_factory.h \
   /usr/local/include/spdlog/logger.h \
   /usr/local/include/spdlog/details/backtracer.h \
@@ -319,28 +328,216 @@ src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o: \
   /usr/local/include/spdlog/details/log_msg.h \
   /usr/local/include/spdlog/version.h \
   /workspace/JavaVirtualMachine/src/../include/classFile/../java_base.hpp \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/map \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_tree.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_map.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_multimap.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/variant \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/unordered_set \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_set.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/map \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_tree.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_map.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_multimap.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/variant \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/unordered_set \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/unordered_set.h \
   /workspace/JavaVirtualMachine/src/../include/classFile/byte_code_reader.hpp \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/filesystem \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/fs_fwd.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/fs_path.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/locale \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/locale_facets_nonio.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/time_members.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/filesystem \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/fs_fwd.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/fs_path.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/locale \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_facets_nonio.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/time_members.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/messages_members.h \
   /usr/include/libintl.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/locale_facets_nonio.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/locale_conv.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iomanip \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/quoted_string.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/sstream \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/sstream.tcc \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/codecvt \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/fs_dir.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/fs_ops.h
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_facets_nonio.tcc \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_conv.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/iomanip \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/quoted_string.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/codecvt \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/fs_dir.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/fs_ops.h \
+  /usr/include/llvm-20/llvm/IR/IRBuilder.h \
+  /usr/lib/llvm-20/include/llvm-c/Types.h \
+  /usr/lib/llvm-20/include/llvm-c/DataTypes.h \
+  /usr/lib/llvm-20/lib/clang/20/include/inttypes.h \
+  /usr/include/inttypes.h /usr/lib/llvm-20/include/llvm-c/ExternC.h \
+  /usr/lib/llvm-20/include/llvm/ADT/ArrayRef.h \
+  /usr/lib/llvm-20/include/llvm/ADT/Hashing.h \
+  /usr/lib/llvm-20/include/llvm/Config/abi-breaking.h \
+  /usr/lib/llvm-20/include/llvm/Support/DataTypes.h \
+  /usr/lib/llvm-20/include/llvm/Support/ErrorHandling.h \
+  /usr/lib/llvm-20/include/llvm/Support/Compiler.h \
+  /usr/lib/llvm-20/include/llvm/Config/llvm-config.h \
+  /usr/lib/llvm-20/include/llvm/Support/SwapByteOrder.h \
+  /usr/lib/llvm-20/include/llvm/ADT/STLForwardCompat.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/optional \
+  /usr/lib/llvm-20/include/llvm/ADT/bit.h \
+  /usr/lib/llvm-20/include/llvm/Support/type_traits.h \
+  /usr/lib/llvm-20/include/llvm/ADT/SmallVector.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/iterator \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stream_iterator.h \
+  /usr/lib/llvm-20/include/llvm/ADT/STLExtras.h \
+  /usr/lib/llvm-20/include/llvm/ADT/ADL.h \
+  /usr/lib/llvm-20/include/llvm/ADT/STLFunctionalExtras.h \
+  /usr/lib/llvm-20/include/llvm/ADT/iterator.h \
+  /usr/lib/llvm-20/include/llvm/ADT/iterator_range.h \
+  /usr/lib/llvm-20/include/llvm/ADT/StringRef.h \
+  /usr/lib/llvm-20/include/llvm/ADT/DenseMapInfo.h \
+  /usr/lib/llvm-20/include/llvm/ADT/Twine.h \
+  /usr/lib/llvm-20/include/llvm/IR/BasicBlock.h \
+  /usr/lib/llvm-20/include/llvm/ADT/DenseMap.h \
+  /usr/lib/llvm-20/include/llvm/ADT/EpochTracker.h \
+  /usr/lib/llvm-20/include/llvm/Support/AlignOf.h \
+  /usr/lib/llvm-20/include/llvm/Support/MathExtras.h \
+  /usr/lib/llvm-20/include/llvm/Support/MemAlloc.h \
+  /usr/lib/llvm-20/include/llvm/Support/ReverseIteration.h \
+  /usr/lib/llvm-20/include/llvm/Support/PointerLikeTypeTraits.h \
+  /usr/lib/llvm-20/include/llvm/ADT/ilist.h \
+  /usr/lib/llvm-20/include/llvm/ADT/simple_ilist.h \
+  /usr/lib/llvm-20/include/llvm/ADT/ilist_base.h \
+  /usr/lib/llvm-20/include/llvm/ADT/ilist_node_base.h \
+  /usr/lib/llvm-20/include/llvm/ADT/PointerIntPair.h \
+  /usr/lib/llvm-20/include/llvm/ADT/ilist_iterator.h \
+  /usr/lib/llvm-20/include/llvm/ADT/ilist_node.h \
+  /usr/lib/llvm-20/include/llvm/ADT/ilist_node_options.h \
+  /usr/lib/llvm-20/include/llvm/IR/DebugProgramInstruction.h \
+  /usr/lib/llvm-20/include/llvm/IR/DbgVariableFragmentInfo.h \
+  /usr/lib/llvm-20/include/llvm/IR/DebugLoc.h \
+  /usr/lib/llvm-20/include/llvm/IR/TrackingMDRef.h \
+  /usr/lib/llvm-20/include/llvm/IR/Metadata.h \
+  /usr/lib/llvm-20/include/llvm/ADT/PointerUnion.h \
+  /usr/lib/llvm-20/include/llvm/Support/Casting.h \
+  /usr/lib/llvm-20/include/llvm/IR/Constant.h \
+  /usr/lib/llvm-20/include/llvm/IR/User.h \
+  /usr/lib/llvm-20/include/llvm/IR/Use.h \
+  /usr/lib/llvm-20/include/llvm/Support/CBindingWrapping.h \
+  /usr/lib/llvm-20/include/llvm/IR/Value.h \
+  /usr/lib/llvm-20/include/llvm/Support/Alignment.h \
+  /usr/lib/llvm-20/include/llvm/IR/Value.def \
+  /usr/lib/llvm-20/include/llvm/IR/LLVMContext.h \
+  /usr/lib/llvm-20/include/llvm/IR/DiagnosticHandler.h \
+  /usr/lib/llvm-20/include/llvm/IR/FixedMetadataKinds.def \
+  /usr/lib/llvm-20/include/llvm/IR/Metadata.def \
+  /usr/lib/llvm-20/include/llvm/IR/Instruction.h \
+  /usr/lib/llvm-20/include/llvm/ADT/Bitfields.h \
+  /usr/lib/llvm-20/include/llvm/IR/SymbolTableListTraits.h \
+  /usr/lib/llvm-20/include/llvm/Support/AtomicOrdering.h \
+  /usr/lib/llvm-20/include/llvm/IR/Instruction.def \
+  /usr/lib/llvm-20/include/llvm/IR/ConstantFolder.h \
+  /usr/lib/llvm-20/include/llvm/IR/ConstantFold.h \
+  /usr/lib/llvm-20/include/llvm/IR/InstrTypes.h \
+  /usr/lib/llvm-20/include/llvm/ADT/Sequence.h \
+  /usr/lib/llvm-20/include/llvm/ADT/StringMap.h \
+  /usr/lib/llvm-20/include/llvm/ADT/StringMapEntry.h \
+  /usr/lib/llvm-20/include/llvm/Support/AllocatorBase.h \
+  /usr/lib/llvm-20/include/llvm/IR/Attributes.h \
+  /usr/lib/llvm-20/include/llvm/ADT/BitmaskEnum.h \
+  /usr/lib/llvm-20/include/llvm/Support/CodeGen.h \
+  /usr/lib/llvm-20/include/llvm/Support/ModRef.h \
+  /usr/lib/llvm-20/include/llvm/Support/raw_ostream.h \
+  /usr/lib/llvm-20/include/llvm/IR/Attributes.inc \
+  /usr/lib/llvm-20/include/llvm/IR/CallingConv.h \
+  /usr/lib/llvm-20/include/llvm/IR/DerivedTypes.h \
+  /usr/lib/llvm-20/include/llvm/IR/Type.h \
+  /usr/lib/llvm-20/include/llvm/Support/TypeSize.h \
+  /usr/lib/llvm-20/include/llvm/IR/FMF.h \
+  /usr/lib/llvm-20/include/llvm/IR/Function.h \
+  /usr/lib/llvm-20/include/llvm/ADT/DenseSet.h \
+  /usr/lib/llvm-20/include/llvm/IR/Argument.h \
+  /usr/lib/llvm-20/include/llvm/IR/GlobalObject.h \
+  /usr/lib/llvm-20/include/llvm/IR/GlobalValue.h \
+  /usr/lib/llvm-20/include/llvm/IR/OperandTraits.h \
+  /usr/lib/llvm-20/include/llvm/IR/Constants.h \
+  /usr/lib/llvm-20/include/llvm/ADT/APFloat.h \
+  /usr/lib/llvm-20/include/llvm/ADT/APInt.h \
+  /usr/lib/llvm-20/include/llvm/Support/float128.h \
+  /usr/lib/llvm-20/include/llvm/ADT/FloatingPointMode.h \
+  /usr/lib/llvm-20/include/llvm/ADT/StringSwitch.h \
+  /usr/lib/llvm-20/include/llvm/IR/ConstantRange.h \
+  /usr/lib/llvm-20/include/llvm/IR/GEPNoWrapFlags.h \
+  /usr/lib/llvm-20/include/llvm/IR/Intrinsics.h \
+  /usr/lib/llvm-20/include/llvm/IR/IntrinsicEnums.inc \
+  /usr/lib/llvm-20/include/llvm/IR/IRBuilderFolder.h \
+  /usr/lib/llvm-20/include/llvm/IR/Operator.h \
+  /usr/lib/llvm-20/include/llvm/ADT/MapVector.h \
+  /usr/lib/llvm-20/include/llvm/IR/DataLayout.h \
+  /usr/lib/llvm-20/include/llvm/Support/TrailingObjects.h \
+  /usr/lib/llvm-20/include/llvm/IR/FPEnv.h \
+  /usr/lib/llvm-20/include/llvm/IR/GlobalVariable.h \
+  /usr/lib/llvm-20/include/llvm/IR/Instructions.h \
+  /usr/lib/llvm-20/include/llvm/IR/CFG.h \
+  /usr/lib/llvm-20/include/llvm/ADT/GraphTraits.h \
+  /usr/lib/llvm-20/include/llvm/IR/CmpPredicate.h \
+  /usr/lib/llvm-20/include/llvm/IR/ValueHandle.h \
+  /usr/include/llvm-20/llvm/IR/PassManager.h \
+  /usr/lib/llvm-20/include/llvm/ADT/TinyPtrVector.h \
+  /usr/lib/llvm-20/include/llvm/IR/Analysis.h \
+  /usr/lib/llvm-20/include/llvm/ADT/SmallPtrSet.h \
+  /usr/lib/llvm-20/include/llvm/IR/PassManagerInternal.h \
+  /usr/lib/llvm-20/include/llvm/Support/TypeName.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/list \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_list.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/list.tcc \
+  /usr/include/llvm-20/llvm/Support/raw_ostream.h \
+  /usr/include/llvm-20/llvm/IR/BasicBlock.h \
+  /usr/include/llvm-20/llvm/IR/DerivedTypes.h \
+  /usr/include/llvm-20/llvm/IR/Instruction.h \
+  /usr/lib/llvm-20/include/llvm/IR/Module.h \
+  /usr/lib/llvm-20/include/llvm/IR/Comdat.h \
+  /usr/lib/llvm-20/include/llvm/IR/GlobalAlias.h \
+  /usr/lib/llvm-20/include/llvm/IR/GlobalIFunc.h \
+  /usr/lib/llvm-20/include/llvm/IR/ProfileSummary.h \
+  /usr/lib/llvm-20/include/llvm/ExecutionEngine/ExecutionEngine.h \
+  /usr/lib/llvm-20/include/llvm-c/ExecutionEngine.h \
+  /usr/lib/llvm-20/include/llvm-c/Target.h \
+  /usr/lib/llvm-20/include/llvm/Config/Targets.def \
+  /usr/lib/llvm-20/include/llvm/Config/AsmPrinters.def \
+  /usr/lib/llvm-20/include/llvm/Config/AsmParsers.def \
+  /usr/lib/llvm-20/include/llvm/Config/Disassemblers.def \
+  /usr/lib/llvm-20/include/llvm-c/TargetMachine.h \
+  /usr/lib/llvm-20/include/llvm/ExecutionEngine/JITSymbol.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/set \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_set.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_multiset.h \
+  /usr/lib/llvm-20/include/llvm/ADT/FunctionExtras.h \
+  /usr/lib/llvm-20/include/llvm/Support/Error.h \
+  /usr/lib/llvm-20/include/llvm-c/Error.h \
+  /usr/lib/llvm-20/include/llvm/Support/Debug.h \
+  /usr/lib/llvm-20/include/llvm/Support/ErrorOr.h \
+  /usr/lib/llvm-20/include/llvm/Support/Format.h \
+  /usr/lib/llvm-20/include/llvm/Object/Binary.h \
+  /usr/lib/llvm-20/include/llvm/Object/Error.h \
+  /usr/lib/llvm-20/include/llvm/Support/MemoryBuffer.h \
+  /usr/lib/llvm-20/include/llvm/Support/MemoryBufferRef.h \
+  /usr/lib/llvm-20/include/llvm/TargetParser/Triple.h \
+  /usr/lib/llvm-20/include/llvm/Support/VersionTuple.h \
+  /usr/lib/llvm-20/include/llvm/Support/Mutex.h \
+  /usr/lib/llvm-20/include/llvm/Support/Threading.h \
+  /usr/lib/llvm-20/include/llvm/ADT/BitVector.h \
+  /usr/lib/llvm-20/include/llvm/Target/TargetMachine.h \
+  /usr/lib/llvm-20/include/llvm/IR/PassManager.h \
+  /usr/lib/llvm-20/include/llvm/MC/MCStreamer.h \
+  /usr/lib/llvm-20/include/llvm/MC/MCDirectives.h \
+  /usr/lib/llvm-20/include/llvm/MC/MCDwarf.h \
+  /usr/lib/llvm-20/include/llvm/MC/StringTableBuilder.h \
+  /usr/lib/llvm-20/include/llvm/ADT/CachedHashString.h \
+  /usr/lib/llvm-20/include/llvm/Support/MD5.h \
+  /usr/lib/llvm-20/include/llvm/Support/Endian.h \
+  /usr/lib/llvm-20/include/llvm/Support/SMLoc.h \
+  /usr/lib/llvm-20/include/llvm/Support/StringSaver.h \
+  /usr/lib/llvm-20/include/llvm/Support/Allocator.h \
+  /usr/lib/llvm-20/include/llvm/MC/MCFragment.h \
+  /usr/lib/llvm-20/include/llvm/ADT/SmallString.h \
+  /usr/lib/llvm-20/include/llvm/MC/MCFixup.h \
+  /usr/lib/llvm-20/include/llvm/MC/MCInst.h \
+  /usr/lib/llvm-20/include/llvm/MC/MCRegister.h \
+  /usr/lib/llvm-20/include/llvm/MC/MCLinkerOptimizationHint.h \
+  /usr/lib/llvm-20/include/llvm/MC/MCPseudoProbe.h \
+  /usr/lib/llvm-20/include/llvm/IR/PseudoProbe.h \
+  /usr/lib/llvm-20/include/llvm/MC/MCWinEH.h \
+  /usr/lib/llvm-20/include/llvm/TargetParser/ARMTargetParser.h \
+  /usr/lib/llvm-20/include/llvm/Support/ARMBuildAttributes.h \
+  /usr/lib/llvm-20/include/llvm/Support/ELFAttributes.h \
+  /usr/lib/llvm-20/include/llvm/TargetParser/ARMTargetParserCommon.h \
+  /usr/lib/llvm-20/include/llvm/TargetParser/ARMTargetParser.def \
+  /usr/lib/llvm-20/include/llvm/Support/PGOOptions.h \
+  /usr/lib/llvm-20/include/llvm/ADT/IntrusiveRefCntPtr.h \
+  /usr/lib/llvm-20/include/llvm/Target/CGPassBuilderOption.h \
+  /usr/lib/llvm-20/include/llvm/Target/TargetOptions.h \
+  /usr/lib/llvm-20/include/llvm/MC/MCTargetOptions.h \
+  /usr/lib/llvm-20/include/llvm/Support/Compression.h

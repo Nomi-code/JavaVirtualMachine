@@ -1,4 +1,5 @@
 #include "runtime/byte_code_engine.hpp"
+#include <spdlog/spdlog.h>
 #include <unordered_map>
 
 using std::string;
@@ -207,3 +208,8 @@ unordered_map<int, string> code_table = {{0x00, "nop"},
                                          {0xca, "breakpoint"},
                                          {0xfe, "impdep1"},
                                          {0xff, "impdep2"}};
+
+
+inline void nop() {
+    spdlog::info("nop");
+}

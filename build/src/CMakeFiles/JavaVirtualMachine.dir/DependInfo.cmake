@@ -12,10 +12,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/workspace/JavaVirtualMachine/src/main.cpp" "src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o" "gcc" "src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o.d"
   "/workspace/JavaVirtualMachine/src/runtime/byte_code_engine.cpp" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.o" "gcc" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.o.d"
   "/workspace/JavaVirtualMachine/src/runtime/klass.cpp" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o" "gcc" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o.d"
+  "/workspace/JavaVirtualMachine/src/runtime/oop.cpp" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o" "gcc" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o.d"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

@@ -1,12 +1,14 @@
 file(REMOVE_RECURSE
-  "../../test/bin/JavaVirtualMachineTest"
-  "../../test/bin/JavaVirtualMachineTest.pdb"
+  "/workspace/JavaVirtualMachine/test/bin/JavaVirtualMachineTest"
+  "/workspace/JavaVirtualMachine/test/bin/JavaVirtualMachineTest.pdb"
   "CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o"
   "CMakeFiles/JavaVirtualMachineTest.dir/__/src/classFile/class_file.cpp.o.d"
   "CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/byte_code_engine.cpp.o"
   "CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/byte_code_engine.cpp.o.d"
   "CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o"
   "CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.o.d"
+  "CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/oop.cpp.o"
+  "CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/oop.cpp.o.d"
   "CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o"
   "CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o.d"
 )
