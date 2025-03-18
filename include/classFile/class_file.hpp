@@ -1,15 +1,17 @@
 #pragma once
+
 #include <algorithm>
+#include <alloca.h>
 #include <cassert>
 #include <cstring>
 #include <ostream>
 #include <system_error>
 #include <iostream>
-#include <spdlog/spdlog.h>
 #include <unordered_map>
 
 #include "../java_base.hpp"
 #include "byte_code_reader.hpp"
+#include "runtime/static_space.hpp"
 
 namespace raw_jvm_data {
     using namespace raw_jvm_type;
@@ -197,7 +199,8 @@ namespace raw_jvm_data {
         friend ByteCodeReader& operator>>(ByteCodeReader& bcr, ConstantUtf8& ci) {
             bcr.read_u2(&ci.length);
             // to c string
-            ci.bytes = new u1[ci.length + 1]{0};
+            ci.bytes = rt_jvm_memory::StaticSpaceAllocator<raw_jvm_type::u1>::allocate_static(
+                ci.length + 1);
             bcr.read_multiple_bytes(ci.bytes, ci.length);
             return bcr;
         }
@@ -256,7 +259,8 @@ namespace raw_jvm_data {
             bcr.read_u2(&ai.attribute_name_index);
             bcr.read_u4(&ai.attribute_length);
             // allocate new array
-            ai.info = new u1[ai.attribute_length];
+            ai.info = rt_jvm_memory::StaticSpaceAllocator<raw_jvm_type::u1>::allocate_static(
+                ai.attribute_length);
             bcr.read_multiple_bytes(ai.info, ai.attribute_length);
             return bcr;
         }
@@ -277,7 +281,8 @@ namespace raw_jvm_data {
             bcr.read_u2(&fi.descriptor_index);
             bcr.read_u2(&fi.attribute_count);
 
-            fi.attributes = new AttributeInfo[fi.attribute_count];
+            fi.attributes = rt_jvm_memory::StaticSpaceAllocator<AttributeInfo>::allocate_static(
+                fi.attribute_count);
             for (u2 index = 0; index < fi.attribute_count; index++) {
                 bcr >> fi.attributes[index];
             }
@@ -300,7 +305,8 @@ namespace raw_jvm_data {
             bcr.read_u2(&mi.descriptor_index);
             bcr.read_u2(&mi.attribute_count);
 
-            mi.attributes = new AttributeInfo[mi.attribute_count];
+            mi.attributes = rt_jvm_memory::StaticSpaceAllocator<AttributeInfo>::allocate_static(
+                mi.attribute_count);
             for (u2 index = 0; index < mi.attribute_count; index++) {
                 bcr >> mi.attributes[index];
             }

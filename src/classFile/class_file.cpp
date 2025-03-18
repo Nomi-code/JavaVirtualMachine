@@ -1,11 +1,9 @@
 #include "classFile/class_file.hpp"
 #include "classFile/byte_code_reader.hpp"
-#include "runtime/static_space.hpp"
 #include "java_base.hpp"
 #include <cassert>
 #include <cstddef>
 #include <fstream>
-#include <spdlog/spdlog.h>
 #include <string>
 #include <unordered_map>
 #include <utility>
@@ -13,50 +11,111 @@
 using namespace raw_jvm_data;
 
 ConstantUtf8::~ConstantUtf8() {
-    if (bytes != nullptr) delete[] bytes;
+    // if (bytes != nullptr) delete[] bytes;
 }
 
 AttributeInfo::~AttributeInfo() {
-    if (info != nullptr) delete[] info;
+    // if (info != nullptr) delete[] info;
 }
 
 FieldInfo::~FieldInfo() {
-    if (attributes != nullptr) delete[] attributes;
+    // if (attributes != nullptr) delete[] attributes;
 }
 
 MethodInfo::~MethodInfo() {
-    if (attributes != nullptr) delete[] attributes;
+    // if (attributes != nullptr) delete[] attributes;
 }
 
 ConstantInfo_ptr ClassFile::build_constant_info(ByteCodeReader& bcr, u1 tag) {
     ConstantInfo* info = nullptr;
 
-#define BUILD_CONSTANT(CONDITION, PTR_TYPE)                                                        \
-    case CONDITION: {                                                                              \
-        PTR_TYPE* ptr = new PTR_TYPE();                                                            \
-        ptr->tag = tag;                                                                            \
-        bcr >> *ptr;                                                                                \
-        info = ptr;                                                                                \
-        break;                                                                                     \
-    }
-
     switch (tag) {
-        BUILD_CONSTANT(CONSTANT_Class, ConstantClass);
-        BUILD_CONSTANT(CONSTANT_Fieldref, ConstantFieldRef);
-        BUILD_CONSTANT(CONSTANT_Methodref, ConstantMethodRef);
-        BUILD_CONSTANT(CONSTANT_InterfaceMethodref, ConstantInterfaceMethodRef);
-        BUILD_CONSTANT(CONSTANT_String, ConstantString);
-        BUILD_CONSTANT(CONSTANT_Integer, ConstantInteger);
-        BUILD_CONSTANT(CONSTANT_Float, ConstantFloat);
-        BUILD_CONSTANT(CONSTANT_Long, ConstantLong);
-        BUILD_CONSTANT(CONSTANT_Double, ConstantDouble);
-        BUILD_CONSTANT(CONSTANT_NameAndType, ConstantNameAndType);
-        BUILD_CONSTANT(CONSTANT_Utf8, ConstantUtf8);
-        BUILD_CONSTANT(CONSTANT_MethodHandle, ConstantMethodHandle);
-        BUILD_CONSTANT(CONSTANT_MethodType, ConstantMethodType);
-        BUILD_CONSTANT(CONSTANT_InvokeDynamic, ConstantInvokeDynamic);
+        case CONSTANT_Class: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantClass>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantClass_ptr>(info));
+            break;
+        }
+        case CONSTANT_Fieldref: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantFieldRef>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantFieldRef_ptr>(info));
+            break;
+        }
+        case CONSTANT_Methodref: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantMethodRef>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantMethodRef_ptr>(info));
+            break;
+        }
+        case CONSTANT_InterfaceMethodref: {
+            info =
+                rt_jvm_memory::StaticSpaceAllocator<ConstantInterfaceMethodRef>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantInterfaceMethodRef_ptr>(info));
+            break;
+        }
+        case CONSTANT_String: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantString>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantString_ptr>(info));
+            break;
+        }
+        case CONSTANT_Integer: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantInteger>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantInteger_ptr>(info));
+            break;
+        }
+        case CONSTANT_Float: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantFloat>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantFloat_ptr>(info));
+            break;
+        }
+        case CONSTANT_Long: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantLong>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantLong_ptr>(info));
+            break;
+        }
+        case CONSTANT_Double: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantDouble>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantDouble_ptr>(info));
+            break;
+        }
+        case CONSTANT_NameAndType: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantNameAndType>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantNameAndType_ptr>(info));
+            break;
+        }
+        case CONSTANT_Utf8: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantUtf8>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantUtf8_ptr>(info));
+            break;
+        }
+        case CONSTANT_MethodHandle: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantMethodHandle>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantMethodHandle_ptr>(info));
+            break;
+        }
+        case CONSTANT_MethodType: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantMethodType>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantMethodType_ptr>(info));
+            break;
+        }
+        case CONSTANT_InvokeDynamic: {
+            info = rt_jvm_memory::StaticSpaceAllocator<ConstantInvokeDynamic>::allocate_static(1);
+            info->tag = tag;
+            bcr >> *(static_cast<ConstantInvokeDynamic_ptr>(info));
+            break;
+        }
         default: {
-            spdlog::error("cant resolve tag value: {:x}\n", tag);
             assert(false);
         }
     }
@@ -124,23 +183,6 @@ ClassFile::ClassFile(ByteCodeReader& bcr) {
 
 ClassFile::~ClassFile() {
     if (this->constant_pool != nullptr) {
-
-        for (size_t index = 0; index < this->constant_pool_count; index++) {
-            auto ptr = this->constant_pool[index];
-            if (ptr != nullptr) {
-                switch (ptr->tag) {
-                    case CONSTANT_Utf8: {
-                        auto u8ptr = static_cast<ConstantUtf8_ptr>(ptr);
-                        delete u8ptr;
-                        break;
-                    }
-                    default: {
-                        delete ptr;
-                    }
-                }
-                this->constant_pool[index] = nullptr;
-            }
-        }
         delete[] this->constant_pool;
         this->constant_pool = nullptr;
     }
@@ -165,4 +207,3 @@ ClassFile::~ClassFile() {
         this->attributes = nullptr;
     }
 }
-

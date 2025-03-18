@@ -1,3 +1,5 @@
+#pragma once
+
 #include <spdlog/spdlog.h>
 #include <string>
 
@@ -5,23 +7,26 @@
 
 namespace rt_jvm_memory {
     // 32 MB
-    constexpr std::size_t STATIC_ALLOCATOR_BUF_SIZE = 1024 * 1024 * 32;
+    constexpr std::size_t STATIC_ALLOCATOR_META_SPACE_SIZE = 1024 * 1024 * 64;
 
     template <typename T> class StaticSpaceAllocator {
       public:
         using value_type = T;
         using value_type_ptr = value_type*;
+
       protected:
-        static std::byte buffer[STATIC_ALLOCATOR_BUF_SIZE];
+        static std::byte meta_space[STATIC_ALLOCATOR_META_SPACE_SIZE];
         static std::size_t pos;
-        static value_type_ptr allocate_impl(const std::size_t& n) {
-            if (pos + n <= STATIC_ALLOCATOR_BUF_SIZE) {
-                const auto& ret_addr = reinterpret_cast<value_type_ptr>(buffer + pos);
+        static value_type_ptr allocate_impl(std::size_t n) {
+            n = n * sizeof(value_type);
+            if (pos + n <= STATIC_ALLOCATOR_META_SPACE_SIZE) {
+                const auto& ret_addr = reinterpret_cast<value_type_ptr>(meta_space + pos);
                 pos += n;
                 return ret_addr;
             }
             throw std::bad_alloc();
         }
+
       public:
         StaticSpaceAllocator() = default;
 
@@ -38,7 +43,7 @@ namespace rt_jvm_memory {
         }
     };
 
-    template <typename T> std::byte StaticSpaceAllocator<T>::buffer[STATIC_ALLOCATOR_BUF_SIZE];
+    template <typename T> std::byte StaticSpaceAllocator<T>::meta_space[STATIC_ALLOCATOR_META_SPACE_SIZE] = {};
     template <typename T> std::size_t StaticSpaceAllocator<T>::pos = 0;
 
     using static_string =

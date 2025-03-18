@@ -16,8 +16,8 @@ set(DIR_MODULE_PATH ${PROJECT_SOURCE_DIR}/modules)
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
-SET(CMAKE_C_COMPILER /usr/bin/clang)
-SET(CMAKE_CXX_COMPILER /usr/bin/clang++)
+SET(CMAKE_C_COMPILER /usr/bin/gcc)
+SET(CMAKE_CXX_COMPILER /usr/bin/g++)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CXX_STANDARD_REQUIRED 20)
@@ -27,7 +27,7 @@ set(CMAKE_BUILD_TYPE Debug)
 # set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
  
-add_compile_options(-std=c++20 -gdwarf-4 -O2)
+add_compile_options(-std=c++20 -gdwarf-4 -O)
 add_link_options(-lstdc++fs)
 
 add_subdirectory(${DIR_TEST_PATH})
