@@ -8,7 +8,8 @@
 #include "java_base.hpp"
 #include "classFile/byte_code_reader.hpp"
 #include "classFile/class_file.hpp"
-#include "runtime/static_space.hpp"
+#include "runtime/vm_allocator.hpp"
+#include "runtime/vm_memory.hpp"
 
 namespace rt_jvm_data {
 
@@ -89,12 +90,13 @@ namespace rt_jvm_data {
         std::unordered_map<std::string_view, FieldWrapper> rt_fields;
         std::unordered_map<std::string_view, AttributeWrapper> rt_attributes;
 
-        rt_jvm_memory::static_string generate_function_id(raw_jvm_data::ConstantUtf8_ptr name_u8ptr,
-                                         raw_jvm_data::ConstantUtf8_ptr descri_u8ptr);
-        rt_jvm_memory::static_string generate_function_id(raw_jvm_data::ConstantNameAndType_ptr);
+        std::string generate_function_id(raw_jvm_data::ConstantUtf8_ptr name_u8ptr,
+                                         raw_jvm_data::ConstantUtf8_ptr descri_u8ptr) const;
+        std::string
+            generate_function_id(raw_jvm_data::ConstantNameAndType_ptr) const;
 
-        type reslove_type(raw_jvm_data::ConstantUtf8_ptr);
-        type reslove_type(raw_jvm_data::ConstantNameAndType_ptr);
+        type reslove_type(raw_jvm_data::ConstantUtf8_ptr) const;
+        type reslove_type(raw_jvm_data::ConstantNameAndType_ptr) const;
 
       public:
         Klass(raw_jvm_data::ByteCodeReader&);

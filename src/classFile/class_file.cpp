@@ -1,6 +1,7 @@
 #include "classFile/class_file.hpp"
 #include "classFile/byte_code_reader.hpp"
 #include "java_base.hpp"
+#include "runtime/vm_allocator.hpp"
 #include <cassert>
 #include <cstddef>
 #include <fstream>
@@ -28,89 +29,88 @@ MethodInfo::~MethodInfo() {
 
 ConstantInfo_ptr ClassFile::build_constant_info(ByteCodeReader& bcr, u1 tag) {
     ConstantInfo* info = nullptr;
-
+    rt_jvm_memory::MetaAllocator malc;
     switch (tag) {
         case CONSTANT_Class: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantClass>::allocate_static(1);
+            info = malc.allocate<ConstantClass>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantClass_ptr>(info));
             break;
         }
         case CONSTANT_Fieldref: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantFieldRef>::allocate_static(1);
+            info = malc.allocate<ConstantFieldRef>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantFieldRef_ptr>(info));
             break;
         }
         case CONSTANT_Methodref: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantMethodRef>::allocate_static(1);
+            info = malc.allocate<ConstantMethodRef>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantMethodRef_ptr>(info));
             break;
         }
         case CONSTANT_InterfaceMethodref: {
-            info =
-                rt_jvm_memory::StaticSpaceAllocator<ConstantInterfaceMethodRef>::allocate_static(1);
+            info = malc.allocate<ConstantInterfaceMethodRef>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantInterfaceMethodRef_ptr>(info));
             break;
         }
         case CONSTANT_String: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantString>::allocate_static(1);
+            info = malc.allocate<ConstantString>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantString_ptr>(info));
             break;
         }
         case CONSTANT_Integer: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantInteger>::allocate_static(1);
+            info = malc.allocate<ConstantInteger>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantInteger_ptr>(info));
             break;
         }
         case CONSTANT_Float: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantFloat>::allocate_static(1);
+            info = malc.allocate<ConstantFloat>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantFloat_ptr>(info));
             break;
         }
         case CONSTANT_Long: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantLong>::allocate_static(1);
+            info = malc.allocate<ConstantLong>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantLong_ptr>(info));
             break;
         }
         case CONSTANT_Double: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantDouble>::allocate_static(1);
+            info = malc.allocate<ConstantDouble>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantDouble_ptr>(info));
             break;
         }
         case CONSTANT_NameAndType: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantNameAndType>::allocate_static(1);
+            info = malc.allocate<ConstantNameAndType>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantNameAndType_ptr>(info));
             break;
         }
         case CONSTANT_Utf8: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantUtf8>::allocate_static(1);
+            info = malc.allocate<ConstantUtf8>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantUtf8_ptr>(info));
             break;
         }
         case CONSTANT_MethodHandle: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantMethodHandle>::allocate_static(1);
+            info = malc.allocate<ConstantMethodHandle>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantMethodHandle_ptr>(info));
             break;
         }
         case CONSTANT_MethodType: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantMethodType>::allocate_static(1);
+            info = malc.allocate<ConstantMethodType>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantMethodType_ptr>(info));
             break;
         }
         case CONSTANT_InvokeDynamic: {
-            info = rt_jvm_memory::StaticSpaceAllocator<ConstantInvokeDynamic>::allocate_static(1);
+            info = malc.allocate<ConstantInvokeDynamic>();
             info->tag = tag;
             bcr >> *(static_cast<ConstantInvokeDynamic_ptr>(info));
             break;

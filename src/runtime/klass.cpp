@@ -1,8 +1,10 @@
 #include "runtime/klass.hpp"
 #include "classFile/byte_code_reader.hpp"
 #include "classFile/class_file.hpp"
+#include "runtime/vm_allocator.hpp"
 #include <cstdlib>
 #include <filesystem>
+#include <string>
 
 using namespace rt_jvm_data;
 using namespace rt_jvm_memory;
@@ -58,16 +60,17 @@ Klass_ptr KlassLoader::load_klass(const std::string_view& klass_name) {
     return nullptr;
 }
 
-static_string Klass::generate_function_id(raw_jvm_data::ConstantUtf8_ptr name_u8ptr,
-                                        raw_jvm_data::ConstantUtf8_ptr descriptor_u8ptr) {
-    static_string result(name_u8ptr->length + descriptor_u8ptr->length + 2, '\0');
-    result.append(reinterpret_cast<char*>(name_u8ptr->bytes), name_u8ptr->length);
+std::string Klass::generate_function_id(raw_jvm_data::ConstantUtf8_ptr name_u8ptr,
+                                        raw_jvm_data::ConstantUtf8_ptr descriptor_u8ptr) const {
+    std::string result(name_u8ptr->length + descriptor_u8ptr->length + 2, '\0');
+    result.append(reinterpret_cast<char*>(name_u8ptr->bytes),
+                                                    name_u8ptr->length);
     result.push_back(':');
     result.append(reinterpret_cast<char*>(descriptor_u8ptr->bytes), descriptor_u8ptr->length);
     return result;
 }
 
-static_string Klass::generate_function_id(raw_jvm_data::ConstantNameAndType_ptr p) {
+std::string Klass::generate_function_id(raw_jvm_data::ConstantNameAndType_ptr p) const {
     const auto& name_u8ptr = static_cast<ConstantUtf8_ptr>(this->constant_pool[p->name_index]);
     const auto& descriptor_u8ptr =
         static_cast<ConstantUtf8_ptr>(this->constant_pool[p->descriptor_index]);
@@ -75,7 +78,7 @@ static_string Klass::generate_function_id(raw_jvm_data::ConstantNameAndType_ptr 
     return this->generate_function_id(name_u8ptr, descriptor_u8ptr);
 }
 
-type Klass::reslove_type(raw_jvm_data::ConstantUtf8_ptr u8ptr) {
+type Klass::reslove_type(raw_jvm_data::ConstantUtf8_ptr u8ptr) const {
     assert(u8ptr->length > 0);
 
     const auto& first_ch = u8ptr->bytes[0];
@@ -88,7 +91,7 @@ type Klass::reslove_type(raw_jvm_data::ConstantUtf8_ptr u8ptr) {
     return TYPE_CHAC_REC[first_ch];
 }
 
-type Klass::reslove_type(raw_jvm_data::ConstantNameAndType_ptr nat_ptr) {
+type Klass::reslove_type(raw_jvm_data::ConstantNameAndType_ptr nat_ptr) const {
     return this->reslove_type(
         static_cast<ConstantUtf8_ptr>(this->constant_pool[nat_ptr->descriptor_index]));
 }

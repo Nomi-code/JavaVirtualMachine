@@ -5,13 +5,14 @@
 #include <cassert>
 #include <cstring>
 #include <ostream>
+#include <spdlog/spdlog.h>
 #include <system_error>
 #include <iostream>
 #include <unordered_map>
 
 #include "../java_base.hpp"
 #include "byte_code_reader.hpp"
-#include "runtime/static_space.hpp"
+#include "runtime/vm_allocator.hpp"
 
 namespace raw_jvm_data {
     using namespace raw_jvm_type;
@@ -48,6 +49,59 @@ namespace raw_jvm_data {
     constexpr u2 ACC_STRICT = 0x0800;
     constexpr u2 ACC_SYNTHETIC = 0x1000;
     constexpr u2 ACC_ENUM = 0x4000;
+
+    namespace AttributeProperties {
+        const std::string constant_value = "ConstantValue";
+        const std::string code = "Code";
+        const std::string stack_map_table = "StackMapTable";
+        const std::string exceptions = "Exceptions";
+        const std::string inner_classes = "InnerClasses";
+        const std::string enclosing_method = "EnclosingMethod";
+        const std::string synthetic = "Synthetic";
+        const std::string signature = "Signature";
+        const std::string source_file = "SourceFile";
+        const std::string source_debug_extension = "SourceDebugExtension";
+        const std::string line_number_table = "LineNumberTable";
+        const std::string local_variable_table = "LocalVariableTable";
+        const std::string local_variable_type_table = "LocalVariableTypeTable";
+        const std::string deprecated = "Deprecated";
+        const std::string runtime_visible_annotations = "RuntimeVisibleAnnotations";
+        const std::string runtime_invisible_annotations = "RuntimeInvisibleAnnotations";
+        const std::string runtime_visible_parameter_annotations =
+            "RuntimeVisibleParameterAnnotations";
+        const std::string runtime_invisible_parameter_annotations =
+            "RuntimeInvisibleParameterAnnotations";
+        const std::string runtime_visible_type_annotations = "RuntimeVisibleTypeAnnotations";
+        const std::string runtime_invisible_type_annotations = "RuntimeInvisibleTypeAnnotations";
+        const std::string annotation_default = "AnnotationDefault";
+        const std::string boosstrap_methods = "BootstrapMethods";
+        const std::string method_parameters = "MethodParameters";
+
+        const std::unordered_set<std::string_view> attribute_names = {
+            constant_value,
+            code,
+            stack_map_table,
+            exceptions,
+            inner_classes,
+            enclosing_method,
+            synthetic,
+            signature,
+            source_file,
+            source_debug_extension,
+            line_number_table,
+            local_variable_table,
+            local_variable_type_table,
+            deprecated,
+            runtime_visible_annotations,
+            runtime_invisible_annotations,
+            runtime_visible_parameter_annotations,
+            runtime_invisible_parameter_annotations,
+            runtime_visible_type_annotations,
+            runtime_invisible_type_annotations,
+            annotation_default,
+            boosstrap_methods,
+            method_parameters};
+    }; // namespace AttributeProperties
 
     struct ConstantInfo;
     struct ConstantClass;
@@ -198,9 +252,8 @@ namespace raw_jvm_data {
 
         friend ByteCodeReader& operator>>(ByteCodeReader& bcr, ConstantUtf8& ci) {
             bcr.read_u2(&ci.length);
-            // to c string
-            ci.bytes = rt_jvm_memory::StaticSpaceAllocator<raw_jvm_type::u1>::allocate_static(
-                ci.length + 1);
+            rt_jvm_memory::StringAllocator spla;
+            ci.bytes = reinterpret_cast<u1_ptr>(spla.allocate(ci.length + 1));
             bcr.read_multiple_bytes(ci.bytes, ci.length);
             return bcr;
         }
@@ -259,8 +312,9 @@ namespace raw_jvm_data {
             bcr.read_u2(&ai.attribute_name_index);
             bcr.read_u4(&ai.attribute_length);
             // allocate new array
-            ai.info = rt_jvm_memory::StaticSpaceAllocator<raw_jvm_type::u1>::allocate_static(
-                ai.attribute_length);
+            if (ai.attribute_length == 0) return bcr;
+            rt_jvm_memory::MetaAllocator malc;
+            ai.info = malc.allocate<raw_jvm_type::u1>(ai.attribute_length);
             bcr.read_multiple_bytes(ai.info, ai.attribute_length);
             return bcr;
         }
@@ -280,9 +334,9 @@ namespace raw_jvm_data {
             bcr.read_u2(&fi.name_index);
             bcr.read_u2(&fi.descriptor_index);
             bcr.read_u2(&fi.attribute_count);
-
-            fi.attributes = rt_jvm_memory::StaticSpaceAllocator<AttributeInfo>::allocate_static(
-                fi.attribute_count);
+            if (fi.attribute_count == 0) return bcr;
+            rt_jvm_memory::MetaAllocator malc;
+            fi.attributes = malc.allocate<AttributeInfo>(fi.attribute_count);
             for (u2 index = 0; index < fi.attribute_count; index++) {
                 bcr >> fi.attributes[index];
             }
@@ -304,9 +358,9 @@ namespace raw_jvm_data {
             bcr.read_u2(&mi.name_index);
             bcr.read_u2(&mi.descriptor_index);
             bcr.read_u2(&mi.attribute_count);
-
-            mi.attributes = rt_jvm_memory::StaticSpaceAllocator<AttributeInfo>::allocate_static(
-                mi.attribute_count);
+            if (mi.attribute_count == 0) return bcr;
+            rt_jvm_memory::MetaAllocator malc;
+            mi.attributes = malc.allocate<AttributeInfo>(mi.attribute_count);
             for (u2 index = 0; index < mi.attribute_count; index++) {
                 bcr >> mi.attributes[index];
             }
