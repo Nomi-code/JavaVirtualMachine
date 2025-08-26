@@ -97,10 +97,24 @@ src/CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.s"
 	cd /workspace/JavaVirtualMachine/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/JavaVirtualMachine/src/runtime/byte_code_engine.cpp -o CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.s
 
+src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o: src/CMakeFiles/JavaVirtualMachine.dir/flags.make
+src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o: ../src/runtime/gc.cpp
+src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o: src/CMakeFiles/JavaVirtualMachine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o"
+	cd /workspace/JavaVirtualMachine/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o -MF CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o.d -o CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o -c /workspace/JavaVirtualMachine/src/runtime/gc.cpp
+
+src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.i"
+	cd /workspace/JavaVirtualMachine/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/JavaVirtualMachine/src/runtime/gc.cpp > CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.i
+
+src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.s"
+	cd /workspace/JavaVirtualMachine/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/JavaVirtualMachine/src/runtime/gc.cpp -o CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.s
+
 src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o: src/CMakeFiles/JavaVirtualMachine.dir/flags.make
 src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o: ../src/runtime/klass.cpp
 src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o: src/CMakeFiles/JavaVirtualMachine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o"
 	cd /workspace/JavaVirtualMachine/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o -MF CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o.d -o CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o -c /workspace/JavaVirtualMachine/src/runtime/klass.cpp
 
 src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.i: cmake_force
@@ -111,10 +125,24 @@ src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.s"
 	cd /workspace/JavaVirtualMachine/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/JavaVirtualMachine/src/runtime/klass.cpp -o CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.s
 
+src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o: src/CMakeFiles/JavaVirtualMachine.dir/flags.make
+src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o: ../src/runtime/oop.cpp
+src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o: src/CMakeFiles/JavaVirtualMachine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o"
+	cd /workspace/JavaVirtualMachine/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o -MF CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o.d -o CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o -c /workspace/JavaVirtualMachine/src/runtime/oop.cpp
+
+src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.i"
+	cd /workspace/JavaVirtualMachine/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspace/JavaVirtualMachine/src/runtime/oop.cpp > CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.i
+
+src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.s"
+	cd /workspace/JavaVirtualMachine/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspace/JavaVirtualMachine/src/runtime/oop.cpp -o CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.s
+
 src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o: src/CMakeFiles/JavaVirtualMachine.dir/flags.make
 src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o: ../src/main.cpp
 src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o: src/CMakeFiles/JavaVirtualMachine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o"
 	cd /workspace/JavaVirtualMachine/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o -MF CMakeFiles/JavaVirtualMachine.dir/main.cpp.o.d -o CMakeFiles/JavaVirtualMachine.dir/main.cpp.o -c /workspace/JavaVirtualMachine/src/main.cpp
 
 src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.i: cmake_force
@@ -129,7 +157,9 @@ src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.s: cmake_force
 JavaVirtualMachine_OBJECTS = \
 "CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.o" \
 "CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.o" \
+"CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o" \
 "CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o" \
+"CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o" \
 "CMakeFiles/JavaVirtualMachine.dir/main.cpp.o"
 
 # External object files for target JavaVirtualMachine
@@ -137,7 +167,9 @@ JavaVirtualMachine_EXTERNAL_OBJECTS =
 
 ../bin/JavaVirtualMachine: src/CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.o
 ../bin/JavaVirtualMachine: src/CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.o
+../bin/JavaVirtualMachine: src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o
 ../bin/JavaVirtualMachine: src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o
+../bin/JavaVirtualMachine: src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o
 ../bin/JavaVirtualMachine: src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o
 ../bin/JavaVirtualMachine: src/CMakeFiles/JavaVirtualMachine.dir/build.make
 ../bin/JavaVirtualMachine: /usr/lib/x86_64-linux-gnu/libfmt.so.8.1.1
@@ -195,7 +227,7 @@ JavaVirtualMachine_EXTERNAL_OBJECTS =
 ../bin/JavaVirtualMachine: /usr/lib/x86_64-linux-gnu/libtinfo.so
 ../bin/JavaVirtualMachine: /usr/lib/llvm-14/lib/libLLVMDemangle.a
 ../bin/JavaVirtualMachine: src/CMakeFiles/JavaVirtualMachine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../../bin/JavaVirtualMachine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspace/JavaVirtualMachine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../../bin/JavaVirtualMachine"
 	cd /workspace/JavaVirtualMachine/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/JavaVirtualMachine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

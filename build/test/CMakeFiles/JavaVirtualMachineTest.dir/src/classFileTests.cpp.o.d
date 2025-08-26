@@ -427,8 +427,13 @@ test/CMakeFiles/JavaVirtualMachineTest.dir/src/classFileTests.cpp.o: \
   /workspace/JavaVirtualMachine/include/java_base.hpp \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/unordered_set \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_set.h \
-  /workspace/JavaVirtualMachine/test/src/../../include/runtime/string_pool.hpp \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/queue \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/deque \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_deque.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/deque.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_queue.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/shared_mutex \
+  /workspace/JavaVirtualMachine/test/src/../../include/runtime/string_pool.hpp \
   /workspace/JavaVirtualMachine/test/src/../../include/runtime/../classFile/class_file.hpp \
   /workspace/JavaVirtualMachine/test/src/../../include/runtime/../classFile/../java_base.hpp \
   /workspace/JavaVirtualMachine/test/src/../../include/runtime/../classFile/byte_code_reader.hpp

@@ -10,8 +10,16 @@
 #include <vector>
 #include <unordered_set>
 #include <unordered_map>
-
-using string_ptr = std::string*;
+#include <atomic>
+#include <mutex>
+#include <thread>
+#include <algorithm>
+#include <cassert>
+#include <memory>
+#include <mutex>
+#include <condition_variable>
+#include <queue>
+#include <shared_mutex>
 
 namespace raw_jvm_type {
     using u1 = unsigned char;
@@ -22,7 +30,7 @@ namespace raw_jvm_type {
     using u2_ptr = u2*;
     using u4_ptr = u4*;
     using u8_ptr = u8*;
-    
+
     constexpr u1 u1_max = (u1)-1;
     constexpr u2 u2_max = (u2)-1;
     constexpr u4 u4_max = (u4)-1;
@@ -33,3 +41,5 @@ class Printable {
   public:
     virtual void print() const = 0;
 };
+
+inline std::atomic<bool> mark_request{false};

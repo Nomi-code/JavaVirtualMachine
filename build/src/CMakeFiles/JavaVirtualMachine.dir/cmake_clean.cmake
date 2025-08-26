@@ -7,8 +7,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/JavaVirtualMachine.dir/main.cpp.o.d"
   "CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.o"
   "CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.o.d"
+  "CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o"
+  "CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o.d"
   "CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o"
   "CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o.d"
+  "CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o"
+  "CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,6 +1,6 @@
 src/CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.o: \
   /workspace/JavaVirtualMachine/src/classFile/class_file.cpp \
-  /workspace/JavaVirtualMachine/src/classFile/../../include/classFile/class_file.hpp \
+  /workspace/JavaVirtualMachine/include/classFile/class_file.hpp \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/algorithm \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/utility \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -318,7 +318,7 @@ src/CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.o: \
   /usr/local/include/spdlog/details/log_msg_buffer.h \
   /usr/local/include/spdlog/details/log_msg.h \
   /usr/local/include/spdlog/version.h \
-  /workspace/JavaVirtualMachine/src/classFile/../../include/classFile/../java_base.hpp \
+  /workspace/JavaVirtualMachine/include/classFile/../java_base.hpp \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/map \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_tree.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_map.h \
@@ -326,7 +326,13 @@ src/CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/variant \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/unordered_set \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_set.h \
-  /workspace/JavaVirtualMachine/src/classFile/../../include/classFile/byte_code_reader.hpp \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/queue \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/deque \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_deque.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/deque.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_queue.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/shared_mutex \
+  /workspace/JavaVirtualMachine/include/classFile/byte_code_reader.hpp \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/filesystem \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/fs_fwd.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/fs_path.h \
@@ -344,6 +350,5 @@ src/CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/codecvt \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/fs_dir.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/fs_ops.h \
-  /workspace/JavaVirtualMachine/src/classFile/../../include/runtime/string_pool.hpp \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/shared_mutex \
+  /workspace/JavaVirtualMachine/include/runtime/string_pool.hpp \
   /workspace/JavaVirtualMachine/include/java_base.hpp

@@ -77,8 +77,8 @@ test/fast: test
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -188,6 +188,30 @@ __/src/runtime/byte_code_engine.cpp.s:
 	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/byte_code_engine.cpp.s
 .PHONY : __/src/runtime/byte_code_engine.cpp.s
 
+__/src/runtime/gc.o: __/src/runtime/gc.cpp.o
+.PHONY : __/src/runtime/gc.o
+
+# target to build an object file
+__/src/runtime/gc.cpp.o:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/gc.cpp.o
+.PHONY : __/src/runtime/gc.cpp.o
+
+__/src/runtime/gc.i: __/src/runtime/gc.cpp.i
+.PHONY : __/src/runtime/gc.i
+
+# target to preprocess a source file
+__/src/runtime/gc.cpp.i:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/gc.cpp.i
+.PHONY : __/src/runtime/gc.cpp.i
+
+__/src/runtime/gc.s: __/src/runtime/gc.cpp.s
+.PHONY : __/src/runtime/gc.s
+
+# target to generate assembly for a file
+__/src/runtime/gc.cpp.s:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/gc.cpp.s
+.PHONY : __/src/runtime/gc.cpp.s
+
 __/src/runtime/klass.o: __/src/runtime/klass.cpp.o
 .PHONY : __/src/runtime/klass.o
 
@@ -211,6 +235,30 @@ __/src/runtime/klass.s: __/src/runtime/klass.cpp.s
 __/src/runtime/klass.cpp.s:
 	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/klass.cpp.s
 .PHONY : __/src/runtime/klass.cpp.s
+
+__/src/runtime/oop.o: __/src/runtime/oop.cpp.o
+.PHONY : __/src/runtime/oop.o
+
+# target to build an object file
+__/src/runtime/oop.cpp.o:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/oop.cpp.o
+.PHONY : __/src/runtime/oop.cpp.o
+
+__/src/runtime/oop.i: __/src/runtime/oop.cpp.i
+.PHONY : __/src/runtime/oop.i
+
+# target to preprocess a source file
+__/src/runtime/oop.cpp.i:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/oop.cpp.i
+.PHONY : __/src/runtime/oop.cpp.i
+
+__/src/runtime/oop.s: __/src/runtime/oop.cpp.s
+.PHONY : __/src/runtime/oop.s
+
+# target to generate assembly for a file
+__/src/runtime/oop.cpp.s:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/JavaVirtualMachineTest.dir/build.make test/CMakeFiles/JavaVirtualMachineTest.dir/__/src/runtime/oop.cpp.s
+.PHONY : __/src/runtime/oop.cpp.s
 
 src/classFileTests.o: src/classFileTests.cpp.o
 .PHONY : src/classFileTests.o
@@ -252,9 +300,15 @@ help:
 	@echo "... __/src/runtime/byte_code_engine.o"
 	@echo "... __/src/runtime/byte_code_engine.i"
 	@echo "... __/src/runtime/byte_code_engine.s"
+	@echo "... __/src/runtime/gc.o"
+	@echo "... __/src/runtime/gc.i"
+	@echo "... __/src/runtime/gc.s"
 	@echo "... __/src/runtime/klass.o"
 	@echo "... __/src/runtime/klass.i"
 	@echo "... __/src/runtime/klass.s"
+	@echo "... __/src/runtime/oop.o"
+	@echo "... __/src/runtime/oop.i"
+	@echo "... __/src/runtime/oop.s"
 	@echo "... src/classFileTests.o"
 	@echo "... src/classFileTests.i"
 	@echo "... src/classFileTests.s"

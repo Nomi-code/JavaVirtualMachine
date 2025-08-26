@@ -11,7 +11,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/workspace/JavaVirtualMachine/src/classFile/class_file.cpp" "src/CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.o" "gcc" "src/CMakeFiles/JavaVirtualMachine.dir/classFile/class_file.cpp.o.d"
   "/workspace/JavaVirtualMachine/src/main.cpp" "src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o" "gcc" "src/CMakeFiles/JavaVirtualMachine.dir/main.cpp.o.d"
   "/workspace/JavaVirtualMachine/src/runtime/byte_code_engine.cpp" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.o" "gcc" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.o.d"
+  "/workspace/JavaVirtualMachine/src/runtime/gc.cpp" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o" "gcc" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o.d"
   "/workspace/JavaVirtualMachine/src/runtime/klass.cpp" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o" "gcc" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.o.d"
+  "/workspace/JavaVirtualMachine/src/runtime/oop.cpp" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o" "gcc" "src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o.d"
   )
 
 # Targets to which this target links.

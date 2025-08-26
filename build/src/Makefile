@@ -77,8 +77,8 @@ test/fast: test
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -254,6 +254,30 @@ runtime/byte_code_engine.cpp.s:
 	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/runtime/byte_code_engine.cpp.s
 .PHONY : runtime/byte_code_engine.cpp.s
 
+runtime/gc.o: runtime/gc.cpp.o
+.PHONY : runtime/gc.o
+
+# target to build an object file
+runtime/gc.cpp.o:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.o
+.PHONY : runtime/gc.cpp.o
+
+runtime/gc.i: runtime/gc.cpp.i
+.PHONY : runtime/gc.i
+
+# target to preprocess a source file
+runtime/gc.cpp.i:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.i
+.PHONY : runtime/gc.cpp.i
+
+runtime/gc.s: runtime/gc.cpp.s
+.PHONY : runtime/gc.s
+
+# target to generate assembly for a file
+runtime/gc.cpp.s:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/runtime/gc.cpp.s
+.PHONY : runtime/gc.cpp.s
+
 runtime/klass.o: runtime/klass.cpp.o
 .PHONY : runtime/klass.o
 
@@ -278,6 +302,30 @@ runtime/klass.cpp.s:
 	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/runtime/klass.cpp.s
 .PHONY : runtime/klass.cpp.s
 
+runtime/oop.o: runtime/oop.cpp.o
+.PHONY : runtime/oop.o
+
+# target to build an object file
+runtime/oop.cpp.o:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.o
+.PHONY : runtime/oop.cpp.o
+
+runtime/oop.i: runtime/oop.cpp.i
+.PHONY : runtime/oop.i
+
+# target to preprocess a source file
+runtime/oop.cpp.i:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.i
+.PHONY : runtime/oop.cpp.i
+
+runtime/oop.s: runtime/oop.cpp.s
+.PHONY : runtime/oop.s
+
+# target to generate assembly for a file
+runtime/oop.cpp.s:
+	cd /workspace/JavaVirtualMachine/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/JavaVirtualMachine.dir/build.make src/CMakeFiles/JavaVirtualMachine.dir/runtime/oop.cpp.s
+.PHONY : runtime/oop.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -300,9 +348,15 @@ help:
 	@echo "... runtime/byte_code_engine.o"
 	@echo "... runtime/byte_code_engine.i"
 	@echo "... runtime/byte_code_engine.s"
+	@echo "... runtime/gc.o"
+	@echo "... runtime/gc.i"
+	@echo "... runtime/gc.s"
 	@echo "... runtime/klass.o"
 	@echo "... runtime/klass.i"
 	@echo "... runtime/klass.s"
+	@echo "... runtime/oop.o"
+	@echo "... runtime/oop.i"
+	@echo "... runtime/oop.s"
 .PHONY : help
 
 
