@@ -35,6 +35,12 @@ namespace raw_jvm_type {
     constexpr u2 u2_max = (u2)-1;
     constexpr u4 u4_max = (u4)-1;
     constexpr u8 u8_max = (u8)-1;
+
+    template <class T>
+    concept JvmWord = std::same_as<std::remove_cvref_t<T>, raw_jvm_type::u1> ||
+        std::same_as<std::remove_cvref_t<T>, raw_jvm_type::u2> ||
+        std::same_as<std::remove_cvref_t<T>, raw_jvm_type::u4> ||
+        std::same_as<std::remove_cvref_t<T>, raw_jvm_type::u8>;
 } // namespace raw_jvm_type
 
 class Printable {

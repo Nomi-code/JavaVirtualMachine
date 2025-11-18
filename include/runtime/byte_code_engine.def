@@ -1,0 +1,12 @@
+// Minimal JVM bytecode list for demo
+// Format: X(opcode, name)
+X(0x00, nop)
+X(0x02, iconst_m1)
+X(0x03, iconst_0)
+X(0x04, iconst_1)
+X(0x05, iconst_2)
+X(0x06, iconst_3)
+X(0x07, iconst_4)
+X(0x08, iconst_5)
+X(0x60, iadd)
+X(0xac, ireturn)

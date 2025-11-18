@@ -35,7 +35,7 @@ TEST(CLASS_FILE_TEST, CLASS_FILE_INPUT_TEST) {
         if (string(p).ends_with(".class")) {
             fstream ifs(p, std::ios::binary | std::ios::in);
             spdlog::warn({"start read class file: {}"}, p.c_str());
-            rt_jvm_data::Klass kls(ifs);
+            rt_jvm_data::InstanceKlass kls(ifs);
 
             // kls.print();
             ifs.close();

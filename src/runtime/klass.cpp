@@ -1,5 +1,7 @@
 #include "runtime/klass.hpp"
 #include "classFile/class_file.hpp"
+#include <cassert>
+#include <spdlog/spdlog.h>
 
 using namespace rt_jvm_data;
 using namespace raw_jvm_data;
@@ -8,7 +10,7 @@ AttributeWrapper::AttributeWrapper(const raw_jvm_data::AttributeInfo_ptr aaptr) 
     // TODO
 }
 
-MethodWrapper::MethodWrapper(const Klass& kls, const MethodInfo_ptr mptr)
+MethodWrapper::MethodWrapper(const InstanceKlass& kls, const MethodInfo_ptr mptr)
     : mptr(mptr), code(nullptr), code_length(0) {
     for (size_t index = 0; index < mptr->attribute_count; index++) {
         const auto& aptr = &mptr->attributes[index];
@@ -28,7 +30,7 @@ MethodWrapper::MethodWrapper(const Klass& kls, const MethodInfo_ptr mptr)
     }
 }
 
-FieldWrapper::FieldWrapper(const Klass& kls, const raw_jvm_data::FieldInfo_ptr fptr,
+FieldWrapper::FieldWrapper(const InstanceKlass& kls, const raw_jvm_data::FieldInfo_ptr fptr,
                            const u2 object_field_size, const u2 static_field_offset)
     : fptr(fptr), object_field_offset(object_field_size), static_field_offset(static_field_offset) {
     for (size_t index = 0; index < fptr->attribute_count; index++) {
@@ -43,13 +45,13 @@ FieldWrapper::FieldWrapper(const Klass& kls, const raw_jvm_data::FieldInfo_ptr f
     }
 }
 
-std::string Klass::generate_function_id(raw_jvm_data::ConstantUtf8_ptr name_u8ptr,
-                                        raw_jvm_data::ConstantUtf8_ptr descriptor_u8ptr) {
+std::string InstanceKlass::generate_function_id(raw_jvm_data::ConstantUtf8_ptr name_u8ptr,
+                                                raw_jvm_data::ConstantUtf8_ptr descriptor_u8ptr) {
     return std::string(reinterpret_cast<char*>(name_u8ptr->bytes), name_u8ptr->length) + ':' +
            std::string(reinterpret_cast<char*>(descriptor_u8ptr->bytes), descriptor_u8ptr->length);
 }
 
-std::string Klass::generate_function_id(raw_jvm_data::ConstantNameAndType_ptr p) {
+std::string InstanceKlass::generate_function_id(raw_jvm_data::ConstantNameAndType_ptr p) {
     const auto& name_u8ptr = static_cast<ConstantUtf8_ptr>(this->constant_pool[p->name_index]);
     const auto& descriptor_u8ptr =
         static_cast<ConstantUtf8_ptr>(this->constant_pool[p->descriptor_index]);
@@ -57,7 +59,7 @@ std::string Klass::generate_function_id(raw_jvm_data::ConstantNameAndType_ptr p)
     return this->generate_function_id(name_u8ptr, descriptor_u8ptr);
 }
 
-type Klass::reslove_type(raw_jvm_data::ConstantUtf8_ptr u8ptr) {
+raw_value_type InstanceKlass::reslove_type(raw_jvm_data::ConstantUtf8_ptr u8ptr) {
     assert(u8ptr->length > 0);
 
     const auto& first_ch = u8ptr->bytes[0];
@@ -70,12 +72,12 @@ type Klass::reslove_type(raw_jvm_data::ConstantUtf8_ptr u8ptr) {
     return TYPE_CHAC_REC[first_ch];
 }
 
-type Klass::reslove_type(raw_jvm_data::ConstantNameAndType_ptr nat_ptr) {
+raw_value_type InstanceKlass::reslove_type(raw_jvm_data::ConstantNameAndType_ptr nat_ptr) {
     return this->reslove_type(
         static_cast<ConstantUtf8_ptr>(this->constant_pool[nat_ptr->descriptor_index]));
 }
 
-Klass::Klass(std::fstream& in) : raw_jvm_data::ClassFile(in) {
+InstanceKlass::InstanceKlass(std::fstream& in) : raw_jvm_data::ClassFile(in) {
     for (size_t index = 0; index < this->methods_count; index++) {
         const auto& mptr = &this->methods[index];
 
@@ -130,4 +132,34 @@ Klass::Klass(std::fstream& in) : raw_jvm_data::ClassFile(in) {
 
         this->rt_attributes.emplace(std::move(attr_name), aptr);
     }
+
+    ConstantClass_ptr this_kls = get_cp_item<ConstantClass_ptr>(this->this_class);
+    ConstantUtf8_ptr this_kls_name = get_cp_item<ConstantUtf8_ptr>(this_kls->name_index);
+    this->klass_name = utf8cp_to_string(this_kls_name);
 }
+
+std::string InstanceKlass::utf8cp_to_string(raw_jvm_data::ConstantUtf8_ptr ptr) {
+    return std::string(reinterpret_cast<char*>(ptr->bytes), ptr->length);
+}
+
+std::string PrimitiveKlass::generate_primitive_klass_name() {
+    switch (type) {
+        case raw_value_type::Jbyte:
+            return "byte";
+        case raw_value_type::Jchar:
+            return "char";
+        case raw_value_type::Jshort:
+            return "int";
+        case raw_value_type::Jint:
+            return "int";
+        case raw_value_type::Jfloat:
+            return "float";
+        case raw_value_type::Jdouble:
+            return "double";
+        default: {
+            spdlog::error("can't handle type: {}", raw_type_to_char(type));
+            assert(false);
+        }
+    }
+}
+
